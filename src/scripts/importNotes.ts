@@ -45,9 +45,25 @@ const loadMarkdownNotes = (dir: string): any[] => {
 const seedNotes = async () => {
   await connectToDb();
   const notes = loadMarkdownNotes(baseDir);
-  await Note.deleteMany({});
-  const result = await Note.insertMany(notes);
-  console.log(`✅ Inserted ${result.length} notes`);
+  const operations = notes.map(note => ({
+    updateOne: {
+      filter: { path: note.path },    // Unique identifier
+      update: { $set: note },
+      upsert: true
+    }
+  }));
+  
+  await Note.bulkWrite(operations);
+  console.log(`✅ Upserted/updated ${notes.length} notes.`);
+  
+  // Optional cleanup: remove entries no longer in the file system
+  const allPaths = notes.map(note => note.path);
+  const deleted = await Note.deleteMany({ path: { $nin: allPaths } });
+
+  console.log(`🧹 Removed ${deleted.deletedCount} stale notes.`);
+  
+  console.log(`📦 Seeding complete. ${notes.length} upserted, ${deleted.deletedCount} removed.`);
+  
   process.exit(0);
 };
 

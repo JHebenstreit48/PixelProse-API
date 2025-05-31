@@ -56,6 +56,8 @@ Hello, world!
 
 The ReadLine method waits for the user to enter text and press Enter. It reads the entire line of input and returns it as a string.
 
+- In other words it pauses the program and waits for the users input.
+
 ```csharp
 Console.WriteLine("Enter your name:");
 string name = Console.ReadLine();
@@ -71,6 +73,29 @@ Hello, Jordan!
 ```
 
 ---
+
+## Clearing the Console
+
+### Console.Clear()
+
+The Clear method clears the console window, removing all existing text output and resetting the cursor to the top-left corner.
+
+This is useful if you want to clear previous messages and provide a clean screen for the user.
+
+```csharp
+Console.WriteLine("This text will be cleared.");
+Console.Clear();
+Console.WriteLine("The console has been cleared.");
+```
+### Example Interaction
+
+```shell
+This text will be cleared.
+```
+
+```shell
+The console has been cleared.
+```
 
 ## Summary
 

@@ -1,5 +1,3 @@
-# Syntax.md
-
 ## Syntax and Types in C#
 
 C# syntax is structured and consistent, making it readable and developer-friendly. This section introduces core rules and common constructs used to build programs in a clear and maintainable way.

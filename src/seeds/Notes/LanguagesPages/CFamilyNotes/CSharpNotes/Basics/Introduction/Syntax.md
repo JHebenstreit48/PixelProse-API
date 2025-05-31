@@ -33,6 +33,78 @@ Console.WriteLine(Score); // Outputs: 20
 
 ---
 
+## Comments in C#
+
+Comments are lines of text in your code that are ignored by the compiler. They are used to leave notes, explanations, or reminders inside your codebase without affecting how the program runs.
+
+Comments are extremely useful for:
+- Documenting what your code is doing
+- Making your code easier to understand later
+- Communicating with teammates who might work on the same code
+
+---
+
+### Single-Line Comments
+
+To create a comment that spans a single line, use two forward slashes `//`.
+
+```csharp
+// This is a single-line comment
+```
+
+Single-line comments are commonly used for short notes above or beside code.
+
+---
+
+### Commenting Out Code
+
+You can also use comments to temporarily disable (or "comment out") lines of code without deleting them. This is helpful when testing or debugging.
+
+```csharp
+// int result = first + second; // This line is disabled
+```
+
+This technique can be useful when you want to prevent code from running without removing it entirely.
+
+---
+
+### Best Practices for Comments
+
+- Write comments that explain *why* something is done, not just *what* is done.
+- Keep comments up to date when code changes.
+- Avoid redundant comments that simply restate what the code says.
+
+Bad:
+
+```csharp
+// Set x to 5
+int x = 5;
+```
+
+Better:
+
+```csharp
+// Initialize x with the default player health
+int x = 5;
+```
+
+---
+
+### Comments for Collaboration
+
+In team projects, comments help other developers understand the purpose of the code. Good commenting practices improve teamwork and code maintainability over time.
+
+---
+
+## Quick Note on Multi-Line Comments (IDE Tools)
+
+While C# itself does not have multi-line comment syntax like some other languages, Visual Studio and many editors allow you to select multiple lines of code and comment them out all at once using a shortcut or a toolbar button.
+
+These tools are covered in the Tools → Visual Studio section.
+
+
+---
+
 ## Entry Point and the Main Method
 
 Every C# application must include a Main method. This method is the entry point of the program — the first thing that runs when the application starts.

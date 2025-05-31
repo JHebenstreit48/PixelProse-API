@@ -1,5 +1,3 @@
-# Introduction.md
-
 ## Introduction to C#
 
 <span class="emphasis">C#</span> (pronounced <span class="emphasis">"C-Sharp"</span>) is a modern, object-oriented programming language developed by <span class="emphasis">Microsoft</span> as part of its <span class="emphasis">.NET</span> platform. It is designed to be both powerful and developer-friendly, supporting a wide range of application types that run on the <span class="emphasis">.NET Framework</span> and <span class="emphasis">.NET Core</span> (now unified under <span class="emphasis">.NET</span>).

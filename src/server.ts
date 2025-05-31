@@ -15,7 +15,7 @@ const PORT = process.env.PORT || 3001;
 //         🔧 Middleware
 // =============================
 const allowedOrigins = [
-  "https://pixelprose.netlify.app/",
+  "https://pixelprose.netlify.app",
   "http://localhost:5173"
 ];
 
@@ -74,8 +74,6 @@ if (isLocalMonorepo) {
     }
   });
 }
-
-
 
 // =============================
 //       🚀 Start Server

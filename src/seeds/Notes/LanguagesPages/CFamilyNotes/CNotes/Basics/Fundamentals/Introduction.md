@@ -1,4 +1,10 @@
-## Introduction to C
+<br>
+
+---
+
+## What is the C Language?
+
+---
 
 C is a general-purpose programming language that has been widely used for over 50 years. It is extremely powerful and provides low-level memory access and efficient performance. Because of its simplicity and control, C has been the foundation for many modern programming languages.
 

@@ -10,30 +10,40 @@ C is a general-purpose programming language that has been widely used for over 5
 
 C is commonly used in:
 
-- Operating system development (e.g., UNIX, Linux, Windows)
-- Database systems
-- Embedded systems
-- System-level programming
-- High-performance applications
+<div class="fullWidthBullet">
+
+🔹 <span class="emphasis">Operating system development (e.g., UNIX, Linux, Windows)</span>
+🔹 <span class="emphasis">Database systems</span>  
+🔹 <span class="emphasis">Embedded systems</span>  
+🔹 <span class="emphasis">System-level programming</span>  
+🔹 <span class="emphasis">High-performance applications</span>  
+
+</div>
 
 The language offers fine control over hardware and memory, making it ideal for system programming tasks where performance and efficiency are critical.
 
 ---
-
 ## Key Features of C
+---
 
-- Portability across platforms
-- Low-level memory manipulation (pointers)
-- Efficient use of system resources
-- Structured programming support
-- Rich library of built-in functions
-- Foundation for modern languages like C++, Java, and C#
+Here are some of the core characteristics that make C both powerful and enduring:
+
+<div class="smallerBullet">
+
+🔹 <span class="emphasis">Portability across platforms</span>  
+🔹 <span class="emphasis">Low-level memory manipulation (pointers)</span>  
+🔹 <span class="emphasis">Efficient use of system resources</span>  
+🔹 <span class="emphasis">Structured programming support</span>  
+🔹 <span class="emphasis">Rich library of built-in functions</span>  
+🔹 <span class="emphasis">Foundation for modern languages like C++, Java, and C#</span>  
+
+</div>
 
 ---
 
 ## A Simple "Hello, World!" Program
 
-Below is an example of a basic C program that prints `Hello, World!` to the console.
+Below is an example of a basic C program that prints "Hello World" to the console.
 
 ```c
 #include <stdio.h>

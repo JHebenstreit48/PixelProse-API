@@ -12,7 +12,7 @@ C is commonly used in:
 
 <div class="fullWidthBullet">
 
-🔹 <span class="emphasis">Operating system development (e.g., UNIX, Linux, Windows)</span>
+🔹 <span class="emphasis">Operating system development (e.g., UNIX, Linux, Windows)</span>  
 🔹 <span class="emphasis">Database systems</span>  
 🔹 <span class="emphasis">Embedded systems</span>  
 🔹 <span class="emphasis">System-level programming</span>  

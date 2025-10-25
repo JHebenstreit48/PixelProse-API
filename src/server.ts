@@ -43,6 +43,11 @@ app.get("/api/test", (_req: Request, res: Response) => {
   res.status(200).json({ status: "alive" });
 });
 
+// 🩺 Fast liveness for wake probes (no DB hit)
+app.get("/api/health", (_req: Request, res: Response) => {
+  res.status(200).json({ ok: true, service: "notes-api" });
+});
+
 // =============================
 //     🖼️  Static Frontend Serve
 // =============================

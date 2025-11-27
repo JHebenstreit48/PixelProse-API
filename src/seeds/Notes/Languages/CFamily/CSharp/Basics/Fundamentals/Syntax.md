@@ -6,7 +6,7 @@ C# syntax is structured and consistent, making it readable and developer-friendl
 
 ## Statements and Semicolons
 
-All executable statements in C# must end with a semicolon (;). This punctuation tells the compiler that a complete instruction has been written. Missing a semicolon will result in a syntax error.
+All executable statements in C# must end with a semicolon <span class="codeSnip">;</span>. This punctuation tells the compiler that a complete instruction has been written. Missing a semicolon will result in a syntax error.
 
 Semicolons are one of the most basic building blocks of C# syntax and are used in everything from variable declarations to method calls.
 
@@ -46,7 +46,7 @@ Comments are extremely useful for:
 
 ### Single-Line Comments
 
-To create a comment that spans a single line, use two forward slashes `//`.
+To create a comment that spans a single line, use two forward slashes <span class="codeSnip">//</span>.
 
 ```csharp
 // This is a single-line comment

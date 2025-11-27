@@ -1,20 +1,24 @@
+<br>
+
+---
 ## Creating a New C# Project
+---
 
 Steps to start a new C# project:
 
-1. Open **Visual Studio**.
-2. Click **Create a new project**.
-3. Choose **Console App** (for basic applications) or select other C# project templates.
-4. Click **Next**.
-5. Enter your project name and location.
-6. Choose the **.NET version** (recommend using the latest LTS version if possible).
-7. Click **Create**.
+1. Open <span class="emphasis">Visual Studio</span>.
+2. Click <span class="emphasis">Create a new project</span>.
+3. Choose <span class="emphasis">Console App</span> (for basic applications) or select other C# project templates.
+4. Click <span class="emphasis">Next</span>.
+5. Enter your project <span class="emphasis">name</span> and <span class="emphasis">location</span>.
+6. Choose the <span class="emphasis">.NET version</span> (recommend using the latest LTS version if possible).
+7. Click <span class="emphasis">Create</span>.
 
 Visual Studio will generate a starter project structure with a Program.cs file ready to begin coding.
 
 ---
-
 ## Setting the Startup Project (C# Context)
+---
 
 In a C# solution with multiple projects, you must set which project should be the default to run:
 
@@ -24,8 +28,8 @@ In a C# solution with multiple projects, you must set which project should be th
 This ensures that when you run the solution (Ctrl + F5), Visual Studio executes the correct C# project.
 
 ---
-
 ## Adding New C# Files to Your Project
+---
 
 To add new C# class files or other components:
 
@@ -35,14 +39,17 @@ To add new C# class files or other components:
 4. Name your file (e.g., Player.cs).
 5. Click **Add**.
 
+---
 ### Shortcut:
-- **Windows**: Ctrl + Shift + A
+---
+
+- **Windows**: <span class="emphasis">Ctrl + Shift + A</span>
 
 Adding files through Solution Explorer helps maintain an organized project structure for larger C# applications.
 
 ---
-
 ## Error Detection (C# Specific)
+---
 
 Visual Studio provides **real-time syntax and semantic error checking** while you write C# code:
 
@@ -53,8 +60,8 @@ Visual Studio provides **real-time syntax and semantic error checking** while yo
 This feature is powered by **IntelliSense**, enhancing your C# development by providing suggestions and detecting errors early.
 
 ---
-
 ## Using the Error List (C# Context)
+---
 
 The **Error List** window consolidates all syntax and semantic issues in your C# project:
 
@@ -63,8 +70,8 @@ The **Error List** window consolidates all syntax and semantic issues in your C#
 - Keeping the Error List visible improves your workflow when working on large C# projects.
 
 ---
-
 ## Commenting and Uncommenting Code in C#
+---
 
 In C#, comments are essential for documentation and temporarily disabling code.
 
@@ -78,7 +85,6 @@ In C#, comments are essential for documentation and temporarily disabling code.
 Visual Studio also provides buttons in the toolbar for commenting and uncommenting code.
 
 ---
-
 ## Summary
 
 Visual Studio is tightly integrated with the C# language, providing tools like IntelliSense, real-time error checking, and easy project and file management. For anyone working with C#, mastering Visual Studio's core features is key to writing better, more efficient applications.

@@ -10,7 +10,7 @@ import { getFirestore } from "firebase-admin/firestore";
 // ---------- Config / envs ----------
 
 // Require SITE_ID so each project is isolated (devscriptstax, pixelprose, etc.)
-const SITE_ID = process.env.SITE_ID || "devscriptstax";
+const SITE_ID = process.env.SITE_ID || "pixelprose";
 
 // Prefer env var containing JSON; otherwise read serviceAccount.json from disk
 const SA_JSON =

@@ -1,4 +1,8 @@
+<br>
+
+---
 ## History of C
+---
 
 The C programming language was developed in the early 1970s by **Dennis Ritchie** at **Bell Labs**. It was designed as an evolution of the B programming language, with improvements that made it better suited for system programming.
 

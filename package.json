@@ -7,7 +7,6 @@
     "start": "ts-node -r tsconfig-paths/register src/server.ts",
     "dev": "ts-node -r tsconfig-paths/register src/server.ts",
     "seed": "ts-node -r tsconfig-paths/register src/scripts/importNotes.ts",
-    "seed:firebase": "ts-node -r tsconfig-paths/register src/scripts/importNotesFirebase.ts",
     "ping:firebase": "node dist/scripts/pingFirestore.js",
     "build": "tsc",
     "start:watch": "nodemon --exec ts-node -r tsconfig-paths/register src/server.ts",

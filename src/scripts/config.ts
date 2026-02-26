@@ -1,6 +1,6 @@
 export const config = {
   // Where to import the navigation root from (Subpage[])
-  navEntryModule: "@/Navigation/Combined/Core/Pages",
+  navEntryModule: "@/domain/navigation/mainTabs",
 
   // Markdown output root (backend repo)
   notesRoot: "src/seeds/Notes",

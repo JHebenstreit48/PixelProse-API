@@ -1,16 +1,20 @@
 {
   "name": "pixelprose-api",
   "version": "1.0.0",
-  "description": "Backend API for DevScriptStax notes project",
+  "description": "Backend notes database for PixelProse game development project.",
   "main": "src/server.ts",
   "scripts": {
-    "start": "ts-node -r tsconfig-paths/register src/server.ts",
-    "dev": "ts-node -r tsconfig-paths/register src/server.ts",
     "seed": "ts-node -r tsconfig-paths/register src/scripts/importNotes.ts",
+    "seed:dry": "cross-env PRUNE=true PRUNE_DRY_RUN=true ts-node -r tsconfig-paths/register src/scripts/importNotes.ts",
+    "seed:write": "cross-env PRUNE=true PRUNE_DRY_RUN=false ts-node -r tsconfig-paths/register src/scripts/importNotes.ts",
+    "seed:noprune": "cross-env PRUNE=false ts-node -r tsconfig-paths/register src/scripts/importNotes.ts",
+    "gen:md": "tsx -r tsconfig-paths/register src/scripts/cli/gen-md.ts",
+
+    "nav:btns": "tsx -r tsconfig-paths/register src/scripts/cli/sync-nav-btns.ts",
+    "nav:btns:dry": "tsx -r tsconfig-paths/register src/scripts/cli/sync-nav-btns.ts --dry-run",
+
     "ping:firebase": "node dist/scripts/pingFirestore.js",
-    "build": "tsc",
-    "start:watch": "nodemon --exec ts-node -r tsconfig-paths/register src/server.ts",
-    "start:dev": "npm run start:watch"
+    "build": "tsc"
   },
   "dependencies": {
     "cors": "^2.8.5",

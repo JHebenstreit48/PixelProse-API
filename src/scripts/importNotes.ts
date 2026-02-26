@@ -1,70 +1,65 @@
-import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
-import Note from "@/models/notes";
-import { connectToDb } from "@/Utility/connection";
+import "dotenv/config";
+import fg from "fast-glob";
 
-const baseDir = path.join(__dirname, "..", "seeds", "Notes");
+import { getDb } from "@/scripts/notes/firebaseAdmin";
+import { getServiceAccountJson, getSiteId, shouldPrune } from "@/scripts/notes/config";
+import { docIdFor, getBaseDir, toFullPath } from "@/scripts/notes/paths";
+import { parseNotes } from "@/scripts/notes/parseNotes";
+import { writeNote } from "@/scripts/notes/writeNotes";
+import { pruneStaleNotes } from "@/scripts/notes/pruneNotes";
+import { writeNotesMeta } from "@/scripts/notes/writeMeta";
 
-const loadMarkdownNotes = (dir: string): any[] => {
-  const entries: any[] = [];
-  const items = fs.readdirSync(dir);
+async function main() {
+  const siteId = getSiteId();
+  const db = getDb(getServiceAccountJson());
 
-  for (const item of items) {
-    const fullPath = path.join(dir, item);
-    const stat = fs.statSync(fullPath);
+  // EXACTLY matches old behavior:
+  // baseDir = path.join(__dirname, "..", "seeds", "Notes")
+  const baseDir = getBaseDir(__dirname);
 
-    if (stat.isDirectory()) {
-      entries.push(...loadMarkdownNotes(fullPath)); // Recursive
-    } else if (item.endsWith(".md")) {
-      const raw = fs.readFileSync(fullPath, "utf8");
-      const { data, content } = matter(raw);
+  const files = await fg(["**/*.md"], { cwd: baseDir, absolute: true });
+  console.log(`Found ${files.length} markdown files for SITE_ID="${siteId}"`);
 
-      // 🛡️ Guard against missing or empty content
-      if (!content || content.trim() === "") {
-        console.warn(`⚠️ Skipping "${fullPath}" — content is missing or empty.`);
-        continue;
-      }
-
-      const relativeCategory = path.relative(baseDir, path.dirname(fullPath)).replace(/\\/g, "/");
-      const title = data.title || item.replace(".md", "");
-      const notePath = `${relativeCategory}/${title}`;
-
-      entries.push({
-        title,
-        category: data.category || relativeCategory,
-        path: notePath,
-        content,
-      });
-    }
+  // Safety: never prune if we couldn't find files (prevents mass deletion).
+  if (files.length === 0) {
+    throw new Error(
+      `No markdown files found under "${baseDir}". Aborting to avoid accidental prune.`
+    );
   }
 
-  return entries;
-};
+  const seenIds = new Set<string>();
 
-const seedNotes = async () => {
-  await connectToDb();
-  const notes = loadMarkdownNotes(baseDir);
-  const operations = notes.map(note => ({
-    updateOne: {
-      filter: { path: note.path },    // Unique identifier
-      update: { $set: note },
-      upsert: true
+  for (const abs of files) {
+    const fullPath = toFullPath(baseDir, abs);
+    const docId = docIdFor(siteId, fullPath);
+
+    const parsed = parseNotes(abs, fullPath);
+    if (!parsed) {
+      console.warn(`⚠️ Skipping empty file: ${abs}`);
+      continue;
     }
-  }));
-  
-  await Note.bulkWrite(operations);
-  console.log(`✅ Upserted/updated ${notes.length} notes.`);
-  
-  // Optional cleanup: remove entries no longer in the file system
-  const allPaths = notes.map(note => note.path);
-  const deleted = await Note.deleteMany({ path: { $nin: allPaths } });
 
-  console.log(`🧹 Removed ${deleted.deletedCount} stale notes.`);
-  
-  console.log(`📦 Seeding complete. ${notes.length} upserted, ${deleted.deletedCount} removed.`);
-  
-  process.exit(0);
-};
+    await writeNote(db, { siteId, docId, fullPath, parsed });
+    seenIds.add(docId);
+    process.stdout.write(".");
+  }
 
-seedNotes();
+  await writeNotesMeta(db, siteId);
+
+  if (shouldPrune()) {
+    console.log("\n\n🧹 Pruning stale docs...");
+    const removed = await pruneStaleNotes(db, siteId, seenIds);
+    console.log(`🧹 Pruned ${removed} stale docs for SITE_ID="${siteId}".`);
+  } else {
+    console.log(
+      '\n⚠️ PRUNE disabled. Stale docs will remain; enable by setting PRUNE=true (recommended).'
+    );
+  }
+
+  console.log("\n✅ Import complete.");
+}
+
+main().catch((err) => {
+  console.error("❌ Import failed:", err);
+  process.exit(1);
+});

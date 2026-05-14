@@ -8,19 +8,18 @@ import { parseNotes } from "@/scripts/notes/parseNotes";
 import { writeNote } from "@/scripts/notes/writeNotes";
 import { pruneStaleNotes } from "@/scripts/notes/pruneNotes";
 import { writeNotesMeta } from "@/scripts/notes/writeMeta";
+import { exportContentJson } from "@/scripts/notes/exportContent";
+import path from "path";
 
 async function main() {
   const siteId = getSiteId();
   const db = getDb(getServiceAccountJson());
 
-  // EXACTLY matches old behavior:
-  // baseDir = path.join(__dirname, "..", "seeds", "Notes")
   const baseDir = getBaseDir(__dirname);
 
   const files = await fg(["**/*.md"], { cwd: baseDir, absolute: true });
   console.log(`Found ${files.length} markdown files for SITE_ID="${siteId}"`);
 
-  // Safety: never prune if we couldn't find files (prevents mass deletion).
   if (files.length === 0) {
     throw new Error(
       `No markdown files found under "${baseDir}". Aborting to avoid accidental prune.`
@@ -45,6 +44,12 @@ async function main() {
   }
 
   await writeNotesMeta(db, siteId);
+
+  // Export content.json for public access (AI tools, search engines, etc.)
+  // Output path: root of backend repo → commit and push to GitHub
+  // Accessible at: https://raw.githubusercontent.com/YOURUSERNAME/YOURBACKENDREPO/main/content.json
+  const outPath = path.join(process.cwd(), "content.json");
+  await exportContentJson(files, baseDir, outPath);
 
   if (shouldPrune()) {
     console.log("\n\n🧹 Pruning stale docs...");

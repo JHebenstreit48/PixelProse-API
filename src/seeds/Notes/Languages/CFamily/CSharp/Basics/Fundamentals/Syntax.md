@@ -1,25 +1,31 @@
-## Syntax and Types in C#
+# How C# Code Is Structured
+
+<hr class="dividerSection" />
 
 C# syntax is structured and consistent, making it readable and developer-friendly. This section introduces core rules and common constructs used to build programs in a clear and maintainable way.
 
----
+<hr class="dividerSection" />
 
 ## Statements and Semicolons
 
-All executable statements in C# must end with a semicolon <span class="codeSnip">;</span>. This punctuation tells the compiler that a complete instruction has been written. Missing a semicolon will result in a syntax error.
+<hr class="dividerSection" />
 
-Semicolons are one of the most basic building blocks of C# syntax and are used in everything from variable declarations to method calls.
+All executable statements in C# must end with a semicolon <span class="codeSnip">;</span>. This tells the compiler that a complete instruction has been written. Missing a semicolon will result in a syntax error.
+
+Semicolons appear in everything from variable declarations to method calls.
 
 ```csharp
 int number = 5;
 Console.WriteLine(number);
 ```
 
----
+<hr class="dividerSection" />
 
 ## Case Sensitivity
 
-C# is a case-sensitive language. This means that identifiers such as score, Score, and SCORE are treated as three distinct variables.
+<hr class="dividerSection" />
+
+C# is a <span class="emphasis">case-sensitive</span> language. Identifiers such as <span class="codeSnip">score</span>, <span class="codeSnip">Score</span>, and <span class="codeSnip">SCORE</span> are treated as three distinct variables.
 
 Being case-sensitive helps prevent naming conflicts but also requires attention to capitalization throughout your code.
 
@@ -31,20 +37,29 @@ Console.WriteLine(score); // Outputs: 10
 Console.WriteLine(Score); // Outputs: 20
 ```
 
----
+<hr class="dividerSection" />
 
 ## Comments in C#
 
-Comments are lines of text in your code that are ignored by the compiler. They are used to leave notes, explanations, or reminders inside your codebase without affecting how the program runs.
+<hr class="dividerSection" />
 
-Comments are extremely useful for:
-- Documenting what your code is doing
-- Making your code easier to understand later
-- Communicating with teammates who might work on the same code
+Comments are lines of text ignored by the compiler. They are used to leave notes, explanations, or reminders without affecting how the program runs.
 
----
+Comments are useful for:
+
+<div class="centeredBullet">
+  <ul class="diamondBullets fullWidthBullet">
+    <li>Documenting what your code is doing</li>
+    <li>Making your code easier to understand later</li>
+    <li>Communicating with teammates who work on the same codebase</li>
+  </ul>
+</div>
+
+<hr class="dividerSubsection1" />
 
 ### Single-Line Comments
+
+<hr class="dividerSubsection1" />
 
 To create a comment that spans a single line, use two forward slashes <span class="codeSnip">//</span>.
 
@@ -52,66 +67,85 @@ To create a comment that spans a single line, use two forward slashes <span clas
 // This is a single-line comment
 ```
 
-Single-line comments are commonly used for short notes above or beside code.
-
----
-
-### Commenting Out Code
-
-You can also use comments to temporarily disable (or "comment out") lines of code without deleting them. This is helpful when testing or debugging.
+Single-line comments are commonly used for short notes above or beside code. You can also use them to temporarily disable a line without deleting it.
 
 ```csharp
 // int result = first + second; // This line is disabled
 ```
 
-This technique can be useful when you want to prevent code from running without removing it entirely.
+<hr class="dividerSubsection1" />
 
----
+### Multi-Line Comments
+
+<hr class="dividerSubsection1" />
+
+C# supports multi-line comments using <span class="codeSnip">/* */</span> syntax. Everything between the opening and closing markers is ignored by the compiler.
+
+```csharp
+/* This is a
+   multi-line comment */
+```
+
+<div class="centeredBullet">
+  <ul class="diamondBullets fullWidthBullet">
+    <li><span class="emphasis">Ideal for</span>: detailed documentation, explaining complex logic, or commenting out large sections of code during debugging.</li>
+    <li><span class="emphasis">Limitation</span>: C# does <span class="emphasis">not</span> support nested multi-line comments — placing one <span class="codeSnip">/* */</span> block inside another will cause a syntax error.</li>
+  </ul>
+</div>
+
+<hr class="dividerSubsection1" />
+
+### XML Documentation Comments
+
+<hr class="dividerSubsection1" />
+
+C# also supports XML documentation comments using <span class="codeSnip">///</span>. These are recognized by IDEs for IntelliSense support and can be used to generate documentation.
+
+```csharp
+/// <summary>
+/// Describes what this method does
+/// </summary>
+```
+
+<hr class="dividerSubsection1" />
 
 ### Best Practices for Comments
 
-- Write comments that explain *why* something is done, not just *what* is done.
-- Keep comments up to date when code changes.
-- Avoid redundant comments that simply restate what the code says.
+<hr class="dividerSubsection1" />
 
-Bad:
+<div class="centeredBullet">
+  <ul class="diamondBullets fullWidthBullet">
+    <li>Write comments that explain <span class="emphasis">why</span> something is done, not just what is done.</li>
+    <li>Keep comments up to date when code changes.</li>
+    <li>Avoid redundant comments that simply restate what the code already says.</li>
+  </ul>
+</div>
+
+Instead of this:
 
 ```csharp
 // Set x to 5
 int x = 5;
 ```
 
-Better:
+Prefer this:
 
 ```csharp
 // Initialize x with the default player health
 int x = 5;
 ```
 
----
+In team projects, good commenting improves collaboration and long-term maintainability. IDE tools like Visual Studio also allow you to select multiple lines and comment them all out at once using a keyboard shortcut, covered in <span class="emphasis">Tools → Visual Studio</span>.
 
-### Comments for Collaboration
-
-In team projects, comments help other developers understand the purpose of the code. Good commenting practices improve teamwork and code maintainability over time.
-
----
-
-## Quick Note on Multi-Line Comments (IDE Tools)
-
-While C# itself does not have multi-line comment syntax like some other languages, Visual Studio and many editors allow you to select multiple lines of code and comment them out all at once using a shortcut or a toolbar button.
-
-These tools are covered in the Tools → Visual Studio section.
-
-
----
+<hr class="dividerSection" />
 
 ## Entry Point and the Main Method
 
-Every C# application must include a Main method. This method is the entry point of the program — the first thing that runs when the application starts.
+<hr class="dividerSection" />
 
-You can think of the Main method as the front door to your program. It marks where the program begins execution and is required even for simple console apps.
+Every C# application must include a <span class="emphasis">Main</span> method. This is the <span class="emphasis">entry point</span> of the program — the first thing that runs when the application starts.
 
-Additionally, Main is a method like any other — it can return void or int, and it can accept parameters (usually an array of strings for command-line arguments).
+<span class="emphasis">Main</span> can return <span class="codeSnip">void</span> or <span class="codeSnip">int</span>, and it can accept parameters such as a string array for command-line arguments.
 
 ```csharp
 using System;
@@ -125,53 +159,105 @@ class Program
 }
 ```
 
----
+<div class="xrefBox">
+  <span class="emphasis">See:</span>
+  <a href="/c-family/c-sharp/basics/core-concepts/console">
+    C# → Basics → Core Concepts → Console
+  </a>
+</div>
 
-## Input and Output (See Console Page)
-
-Console input and output functions such as WriteLine, Write, and ReadLine are covered in detail on the Console page under Core Concepts.
-
----
+<hr class="dividerSection" />
 
 ## Common Data Types
 
-C# includes several built-in data types that cover numbers, text, logical values, and characters. Below is a summary of some of the most frequently used:
+<hr class="dividerSection" />
+
+C# includes several built-in data types covering numbers, text, logical values, and characters.
+
+<hr class="dividerSubsection1" />
+
+#### Type Descriptions
+
+<hr class="dividerSubsection1" />
 
 <table class="notesTable">
   <thead>
     <tr class="tableHeader">
       <th class="tableCellHeader">Type</th>
       <th class="tableCellHeader">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="tableRow">
+      <td class="tableCell"><span class="codeSnip">int</span></td>
+      <td class="tableCell">Integer (whole number)</td>
+    </tr>
+    <tr class="tableRow">
+      <td class="tableCell"><span class="codeSnip">double</span></td>
+      <td class="tableCell">Double-precision floating point</td>
+    </tr>
+    <tr class="tableRow">
+      <td class="tableCell"><span class="codeSnip">char</span></td>
+      <td class="tableCell">Single character</td>
+    </tr>
+    <tr class="tableRow">
+      <td class="tableCell"><span class="codeSnip">string</span></td>
+      <td class="tableCell">Text string</td>
+    </tr>
+    <tr class="tableRow">
+      <td class="tableCell"><span class="codeSnip">bool</span></td>
+      <td class="tableCell">True or false value</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr class="dividerSubsection1" />
+
+#### Type Examples
+
+<hr class="dividerSubsection1" />
+
+<table class="notesTable">
+  <thead>
+    <tr class="tableHeader">
+      <th class="tableCellHeader">Type</th>
       <th class="tableCellHeader">Example</th>
     </tr>
   </thead>
   <tbody>
     <tr class="tableRow">
-      <td class="tableCell">int</td>
-      <td class="tableCell">Integer (whole number)</td>
-      <td class="tableCell">int x = 100;</td>
+      <td class="tableCell"><span class="codeSnip">int</span></td>
+      <td class="tableCell"><span class="codeSnip">int x = 100;</span></td>
     </tr>
     <tr class="tableRow">
-      <td class="tableCell">double</td>
-      <td class="tableCell">Double-precision floating point</td>
-      <td class="tableCell">double pi = 3.14;</td>
+      <td class="tableCell"><span class="codeSnip">double</span></td>
+      <td class="tableCell"><span class="codeSnip">double pi = 3.14;</span></td>
     </tr>
     <tr class="tableRow">
-      <td class="tableCell">char</td>
-      <td class="tableCell">Single character</td>
-      <td class="tableCell">char grade = 'A';</td>
+      <td class="tableCell"><span class="codeSnip">char</span></td>
+      <td class="tableCell"><span class="codeSnip">char grade = 'A';</span></td>
     </tr>
     <tr class="tableRow">
-      <td class="tableCell">string</td>
-      <td class="tableCell">Text string</td>
-      <td class="tableCell">string name = "Jane";</td>
+      <td class="tableCell"><span class="codeSnip">string</span></td>
+      <td class="tableCell"><span class="codeSnip">string name = "Jane";</span></td>
     </tr>
     <tr class="tableRow">
-      <td class="tableCell">bool</td>
-      <td class="tableCell">True or false value</td>
-      <td class="tableCell">bool isReady = true;</td>
+      <td class="tableCell"><span class="codeSnip">bool</span></td>
+      <td class="tableCell"><span class="codeSnip">bool isReady = true;</span></td>
     </tr>
   </tbody>
 </table>
 
----
+<hr class="dividerSection" />
+
+<div class="xrefNav">
+  <div class="xrefItem">
+    <a class="xrefBtn" href="/c-family/c-sharp/basics/fundamentals/introduction">← Back</a>
+    <div class="xrefTitle">C# - Basics - Fundamentals - Introduction</div>
+  </div>
+
+  <div class="xrefItem">
+    <a class="xrefBtn" href="/c-family/c-sharp/basics/core-concepts/oop">Next →</a>
+    <div class="xrefTitle">Section: C# - Basics - Core Concepts - OOP in C#</div>
+  </div>
+</div>

@@ -20,6 +20,11 @@
     "category": "Languages/CFamily/C/Basics/Fundamentals"
   },
   {
+    "path": "Languages/CFamily/CPlusPlus/Basics/Fundamentals/Introduction",
+    "title": "Introduction",
+    "category": "Languages/CFamily/CPlusPlus/Basics/Fundamentals"
+  },
+  {
     "path": "Languages/CFamily/CSharp/Basics/CoreConcepts/Collections",
     "title": "Collections",
     "category": "Languages/CFamily/CSharp/Basics/CoreConcepts"
@@ -58,10 +63,5 @@
     "path": "Languages/CFamily/CSharp/Tools/IDEs/VisualStudio",
     "title": "VisualStudio",
     "category": "Languages/CFamily/CSharp/Tools/IDEs"
-  },
-  {
-    "path": "Languages/CFamily/CPlusPlus/Basics/Fundamentals/Introduction",
-    "title": "Introduction",
-    "category": "Languages/CFamily/CPlusPlus/Basics/Fundamentals"
   }
 ]

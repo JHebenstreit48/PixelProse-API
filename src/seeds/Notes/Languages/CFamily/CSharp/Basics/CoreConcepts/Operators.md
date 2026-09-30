@@ -1,28 +1,42 @@
-## Operators in C#
+# What Operators Do
 
-Operators in C# are symbols or keywords that specify operations to be performed on variables and values. Understanding operators is essential for writing expressions and making decisions in your code.
+<hr class="dividerSection" />
+
+Operators in C# are symbols or keywords that specify operations to be performed on variables and values.
+
+Understanding operators is essential for writing expressions and making decisions in your code.
 
 C# includes many types of operators, from basic assignment to logical and comparison operators.
 
----
+<hr class="dividerSection" />
 
 ## Dot Operator (.)
 
+<hr class="dividerSection" />
+
 The dot operator is used to access the members (methods, properties, and fields) of a class or object.
 
-This is similar to how JavaScript uses the dot operator. In both C# and JavaScript, the dot (.) acts like opening a toolbox — allowing you to retrieve or execute a specific tool (method or property) from a class or object.
+This is similar to how JavaScript uses the dot operator.
 
-Example in C#:
+In both C# and JavaScript, the dot (<span class="codeSnip">.</span>) acts like opening a toolbox, allowing you to retrieve or execute a specific tool (method or property) from a class or object.
+
+<hr class="dividerExample" />
+
+#### Example: Dot Operator in C#
+
+<hr class="dividerExample" />
 
 ```csharp
 Console.WriteLine("Hello, world!");
 ```
 
-Here, Console is the class, and WriteLine is the method being accessed using the dot operator.
+Here, <span class="codeSnip">Console</span> is the class, and <span class="codeSnip">WriteLine</span> is the method being accessed using the dot operator.
 
----
+<hr class="dividerSection" />
 
 ## Assignment Operator (=)
+
+<hr class="dividerSection" />
 
 The assignment operator is used to assign a value to a variable.
 
@@ -32,48 +46,81 @@ int number = 10;
 
 It places the value on the right side into the variable on the left side.
 
----
+<hr class="dividerSection" />
 
 ## Arithmetic Operators
 
-Arithmetic operators are used to perform mathematical calculations:
+<hr class="dividerSection" />
 
-<table class="notesTable">
-  <thead>
-    <tr class="tableHeader">
-      <th class="tableCellHeader">Operator</th>
-      <th class="tableCellHeader">Description</th>
-      <th class="tableCellHeader">Example</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr class="tableRow">
-      <td class="tableCell">+</td>
-      <td class="tableCell">Addition</td>
-      <td class="tableCell">int sum = 5 + 3;</td>
-    </tr>
-    <tr class="tableRow">
-      <td class="tableCell">-</td>
-      <td class="tableCell">Subtraction</td>
-      <td class="tableCell">int diff = 5 - 3;</td>
-    </tr>
-    <tr class="tableRow">
-      <td class="tableCell">*</td>
-      <td class="tableCell">Multiplication</td>
-      <td class="tableCell">int product = 5 * 3;</td>
-    </tr>
-    <tr class="tableRow">
-      <td class="tableCell">/</td>
-      <td class="tableCell">Division</td>
-      <td class="tableCell">int quotient = 5 / 3;</td>
-    </tr>
-    <tr class="tableRow">
-      <td class="tableCell">%</td>
-      <td class="tableCell">Modulus (remainder)</td>
-      <td class="tableCell">int remainder = 5 % 3;</td>
-    </tr>
-  </tbody>
-</table>
+Arithmetic operators are used to perform mathematical calculations.
+
+<div class="tablePairSideBySide">
+  <div class="tableWrapper">
+    <table class="notesTable">
+      <thead>
+        <tr class="tableHeader">
+          <th class="tableCellHeader">Operator</th>
+          <th class="tableCellHeader">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="tableRow">
+          <td class="tableCell"><span class="codeSnip">+</span></td>
+          <td class="tableCell">Addition</td>
+        </tr>
+        <tr class="tableRow">
+          <td class="tableCell"><span class="codeSnip">-</span></td>
+          <td class="tableCell">Subtraction</td>
+        </tr>
+        <tr class="tableRow">
+          <td class="tableCell"><span class="codeSnip">*</span></td>
+          <td class="tableCell">Multiplication</td>
+        </tr>
+        <tr class="tableRow">
+          <td class="tableCell"><span class="codeSnip">/</span></td>
+          <td class="tableCell">Division</td>
+        </tr>
+        <tr class="tableRow">
+          <td class="tableCell"><span class="codeSnip">%</span></td>
+          <td class="tableCell">Modulus (remainder)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="tableWrapper">
+    <table class="notesTable">
+      <thead>
+        <tr class="tableHeader">
+          <th class="tableCellHeader">Operator</th>
+          <th class="tableCellHeader">Example</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="tableRow">
+          <td class="tableCell"><span class="codeSnip">+</span></td>
+          <td class="tableCell"><span class="codeSnip">int sum = 5 + 3;</span></td>
+        </tr>
+        <tr class="tableRow">
+          <td class="tableCell"><span class="codeSnip">-</span></td>
+          <td class="tableCell"><span class="codeSnip">int diff = 5 - 3;</span></td>
+        </tr>
+        <tr class="tableRow">
+          <td class="tableCell"><span class="codeSnip">*</span></td>
+          <td class="tableCell"><span class="codeSnip">int product = 5 * 3;</span></td>
+        </tr>
+        <tr class="tableRow">
+          <td class="tableCell"><span class="codeSnip">/</span></td>
+          <td class="tableCell"><span class="codeSnip">int quotient = 5 / 3;</span></td>
+        </tr>
+        <tr class="tableRow">
+          <td class="tableCell"><span class="codeSnip">%</span></td>
+          <td class="tableCell"><span class="codeSnip">int remainder = 5 % 3;</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
 
 ```csharp
 int a = 10;
@@ -85,53 +132,89 @@ int quotient = a / b;
 int remainder = a % b;
 ```
 
----
+<hr class="dividerSection" />
 
 ## Comparison Operators
 
-Comparison operators are used to compare two values and return a boolean result (true or false):
+<hr class="dividerSection" />
 
-<table class="notesTable">
-  <thead>
-    <tr class="tableHeader">
-      <th class="tableCellHeader">Operator</th>
-      <th class="tableCellHeader">Description</th>
-      <th class="tableCellHeader">Example</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr class="tableRow">
-      <td class="tableCell">==</td>
-      <td class="tableCell">Equal to</td>
-      <td class="tableCell">5 == 5 // true</td>
-    </tr>
-    <tr class="tableRow">
-      <td class="tableCell">!=</td>
-      <td class="tableCell">Not equal to</td>
-      <td class="tableCell">5 != 3 // true</td>
-    </tr>
-    <tr class="tableRow">
-      <td class="tableCell">&gt;</td>
-      <td class="tableCell">Greater than</td>
-      <td class="tableCell">5 &gt; 3 // true</td>
-    </tr>
-    <tr class="tableRow">
-      <td class="tableCell">&lt;</td>
-      <td class="tableCell">Less than</td>
-      <td class="tableCell">5 &lt; 3 // false</td>
-    </tr>
-    <tr class="tableRow">
-      <td class="tableCell">&gt;=</td>
-      <td class="tableCell">Greater than or equal to</td>
-      <td class="tableCell">5 &gt;= 5 // true</td>
-    </tr>
-    <tr class="tableRow">
-      <td class="tableCell">&lt;=</td>
-      <td class="tableCell">Less than or equal to</td>
-      <td class="tableCell">3 &lt;= 5 // true</td>
-    </tr>
-  </tbody>
-</table>
+Comparison operators are used to compare two values and return a boolean result (true or false).
+
+<div class="tablePairSideBySide">
+  <div class="tableWrapper">
+    <table class="notesTable">
+      <thead>
+        <tr class="tableHeader">
+          <th class="tableCellHeader">Operator</th>
+          <th class="tableCellHeader">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="tableRow">
+          <td class="tableCell"><span class="codeSnip">==</span></td>
+          <td class="tableCell">Equal to</td>
+        </tr>
+        <tr class="tableRow">
+          <td class="tableCell"><span class="codeSnip">!=</span></td>
+          <td class="tableCell">Not equal to</td>
+        </tr>
+        <tr class="tableRow">
+          <td class="tableCell"><span class="codeSnip">&gt;</span></td>
+          <td class="tableCell">Greater than</td>
+        </tr>
+        <tr class="tableRow">
+          <td class="tableCell"><span class="codeSnip">&lt;</span></td>
+          <td class="tableCell">Less than</td>
+        </tr>
+        <tr class="tableRow">
+          <td class="tableCell"><span class="codeSnip">&gt;=</span></td>
+          <td class="tableCell">Greater than or equal to</td>
+        </tr>
+        <tr class="tableRow">
+          <td class="tableCell"><span class="codeSnip">&lt;=</span></td>
+          <td class="tableCell">Less than or equal to</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="tableWrapper">
+    <table class="notesTable">
+      <thead>
+        <tr class="tableHeader">
+          <th class="tableCellHeader">Operator</th>
+          <th class="tableCellHeader">Example</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="tableRow">
+          <td class="tableCell"><span class="codeSnip">==</span></td>
+          <td class="tableCell"><span class="codeSnip">5 == 5 // true</span></td>
+        </tr>
+        <tr class="tableRow">
+          <td class="tableCell"><span class="codeSnip">!=</span></td>
+          <td class="tableCell"><span class="codeSnip">5 != 3 // true</span></td>
+        </tr>
+        <tr class="tableRow">
+          <td class="tableCell"><span class="codeSnip">&gt;</span></td>
+          <td class="tableCell"><span class="codeSnip">5 &gt; 3 // true</span></td>
+        </tr>
+        <tr class="tableRow">
+          <td class="tableCell"><span class="codeSnip">&lt;</span></td>
+          <td class="tableCell"><span class="codeSnip">5 &lt; 3 // false</span></td>
+        </tr>
+        <tr class="tableRow">
+          <td class="tableCell"><span class="codeSnip">&gt;=</span></td>
+          <td class="tableCell"><span class="codeSnip">5 &gt;= 5 // true</span></td>
+        </tr>
+        <tr class="tableRow">
+          <td class="tableCell"><span class="codeSnip">&lt;=</span></td>
+          <td class="tableCell"><span class="codeSnip">3 &lt;= 5 // true</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
 
 ```csharp
 int x = 10;
@@ -139,38 +222,65 @@ int y = 20;
 bool result = x < y;
 ```
 
----
+<hr class="dividerSection" />
 
 ## Logical Operators
 
-Logical operators are used to combine boolean expressions:
+<hr class="dividerSection" />
 
-<table class="notesTable">
-  <thead>
-    <tr class="tableHeader">
-      <th class="tableCellHeader">Operator</th>
-      <th class="tableCellHeader">Description</th>
-      <th class="tableCellHeader">Example</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr class="tableRow">
-      <td class="tableCell">&amp;&amp;</td>
-      <td class="tableCell">Logical AND</td>
-      <td class="tableCell">true &amp;&amp; false // false</td>
-    </tr>
-    <tr class="tableRow">
-      <td class="tableCell">||</td>
-      <td class="tableCell">Logical OR</td>
-      <td class="tableCell">true || false // true</td>
-    </tr>
-    <tr class="tableRow">
-      <td class="tableCell">!</td>
-      <td class="tableCell">Logical NOT</td>
-      <td class="tableCell">!true // false</td>
-    </tr>
-  </tbody>
-</table>
+Logical operators are used to combine boolean expressions.
+
+<div class="tablePairSideBySide">
+  <div class="tableWrapper">
+    <table class="notesTable">
+      <thead>
+        <tr class="tableHeader">
+          <th class="tableCellHeader">Operator</th>
+          <th class="tableCellHeader">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="tableRow">
+          <td class="tableCell"><span class="codeSnip">&amp;&amp;</span></td>
+          <td class="tableCell">Logical AND</td>
+        </tr>
+        <tr class="tableRow">
+          <td class="tableCell"><span class="codeSnip">||</span></td>
+          <td class="tableCell">Logical OR</td>
+        </tr>
+        <tr class="tableRow">
+          <td class="tableCell"><span class="codeSnip">!</span></td>
+          <td class="tableCell">Logical NOT</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="tableWrapper">
+    <table class="notesTable">
+      <thead>
+        <tr class="tableHeader">
+          <th class="tableCellHeader">Operator</th>
+          <th class="tableCellHeader">Example</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="tableRow">
+          <td class="tableCell"><span class="codeSnip">&amp;&amp;</span></td>
+          <td class="tableCell"><span class="codeSnip">true &amp;&amp; false // false</span></td>
+        </tr>
+        <tr class="tableRow">
+          <td class="tableCell"><span class="codeSnip">||</span></td>
+          <td class="tableCell"><span class="codeSnip">true || false // true</span></td>
+        </tr>
+        <tr class="tableRow">
+          <td class="tableCell"><span class="codeSnip">!</span></td>
+          <td class="tableCell"><span class="codeSnip">!true // false</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
 
 ```csharp
 bool a = true;
@@ -180,76 +290,119 @@ bool orResult = a || b;
 bool notResult = !a;
 ```
 
----
+<hr class="dividerSection" />
 
 ## Compound Assignment Operators
 
-Compound assignment operators combine an arithmetic operation with assignment:
+<hr class="dividerSection" />
 
-<table class="notesTable">
-  <thead>
-    <tr class="tableHeader">
-      <th class="tableCellHeader">Operator</th>
-      <th class="tableCellHeader">Description</th>
-      <th class="tableCellHeader">Example</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr class="tableRow">
-      <td class="tableCell">+=</td>
-      <td class="tableCell">Add and assign</td>
-      <td class="tableCell">x += 5; // x = x + 5</td>
-    </tr>
-    <tr class="tableRow">
-      <td class="tableCell">-=</td>
-      <td class="tableCell">Subtract and assign</td>
-      <td class="tableCell">x -= 5; // x = x - 5</td>
-    </tr>
-    <tr class="tableRow">
-      <td class="tableCell">*=</td>
-      <td class="tableCell">Multiply and assign</td>
-      <td class="tableCell">x *= 5; // x = x * 5</td>
-    </tr>
-    <tr class="tableRow">
-      <td class="tableCell">/=</td>
-      <td class="tableCell">Divide and assign</td>
-      <td class="tableCell">x /= 5; // x = x / 5</td>
-    </tr>
-    <tr class="tableRow">
-      <td class="tableCell">%=</td>
-      <td class="tableCell">Modulus and assign</td>
-      <td class="tableCell">x %= 5; // x = x % 5</td>
-    </tr>
-  </tbody>
-</table>
+Compound assignment operators combine an arithmetic operation with assignment.
+
+<div class="tablePairSideBySide">
+  <div class="tableWrapper">
+    <table class="notesTable">
+      <thead>
+        <tr class="tableHeader">
+          <th class="tableCellHeader">Operator</th>
+          <th class="tableCellHeader">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="tableRow">
+          <td class="tableCell"><span class="codeSnip">+=</span></td>
+          <td class="tableCell">Add and assign</td>
+        </tr>
+        <tr class="tableRow">
+          <td class="tableCell"><span class="codeSnip">-=</span></td>
+          <td class="tableCell">Subtract and assign</td>
+        </tr>
+        <tr class="tableRow">
+          <td class="tableCell"><span class="codeSnip">*=</span></td>
+          <td class="tableCell">Multiply and assign</td>
+        </tr>
+        <tr class="tableRow">
+          <td class="tableCell"><span class="codeSnip">/=</span></td>
+          <td class="tableCell">Divide and assign</td>
+        </tr>
+        <tr class="tableRow">
+          <td class="tableCell"><span class="codeSnip">%=</span></td>
+          <td class="tableCell">Modulus and assign</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="tableWrapper">
+    <table class="notesTable">
+      <thead>
+        <tr class="tableHeader">
+          <th class="tableCellHeader">Operator</th>
+          <th class="tableCellHeader">Example</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="tableRow">
+          <td class="tableCell"><span class="codeSnip">+=</span></td>
+          <td class="tableCell"><span class="codeSnip">x += 5; // x = x + 5</span></td>
+        </tr>
+        <tr class="tableRow">
+          <td class="tableCell"><span class="codeSnip">-=</span></td>
+          <td class="tableCell"><span class="codeSnip">x -= 5; // x = x - 5</span></td>
+        </tr>
+        <tr class="tableRow">
+          <td class="tableCell"><span class="codeSnip">*=</span></td>
+          <td class="tableCell"><span class="codeSnip">x *= 5; // x = x * 5</span></td>
+        </tr>
+        <tr class="tableRow">
+          <td class="tableCell"><span class="codeSnip">/=</span></td>
+          <td class="tableCell"><span class="codeSnip">x /= 5; // x = x / 5</span></td>
+        </tr>
+        <tr class="tableRow">
+          <td class="tableCell"><span class="codeSnip">%=</span></td>
+          <td class="tableCell"><span class="codeSnip">x %= 5; // x = x % 5</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
 
 ```csharp
 int number = 10;
 number += 5;
 ```
 
----
+<hr class="dividerSection" />
 
 ## Ternary Operator (?:)
 
-The ternary operator is a shorthand for an if-else statement. It evaluates a boolean expression and returns one of two values depending on whether the expression is true or false.
+<hr class="dividerSection" />
 
-Syntax:
+The ternary operator is a shorthand for an if-else statement.
 
-condition ? value_if_true : value_if_false;
+It evaluates a boolean expression and returns one of two values depending on whether the expression is true or false.
+
+<hr class="dividerExample" />
+
+#### Example: Ternary Operator Syntax
+
+<hr class="dividerExample" />
+
+<span class="codeSnip">condition ? value_if_true : value_if_false;</span>
 
 ```csharp
 int score = 85;
 string result = (score >= 60) ? "Pass" : "Fail";
 ```
 
----
+<hr class="dividerSection" />
 
 ## Null Coalescing Operators (??, ??=)
 
-The null coalescing operator (??) returns the left-hand operand if it is not null; otherwise, it returns the right-hand operand.
+<hr class="dividerSection" />
 
-The null coalescing assignment operator (??=) assigns the right-hand operand to the left-hand operand only if the left-hand operand is null.
+The null coalescing operator (<span class="codeSnip">??</span>) returns the left-hand operand if it is not null, otherwise it returns the right-hand operand.
+
+The null coalescing assignment operator (<span class="codeSnip">??=</span>) assigns the right-hand operand to the left-hand operand only if the left-hand operand is null.
 
 ```csharp
 string name = null;
@@ -259,8 +412,26 @@ int? count = null;
 count ??= 5;
 ```
 
----
+<hr class="dividerSection" />
 
 ## Summary
 
-Operators are fundamental to writing expressions and logic in C#. From simple assignment and arithmetic to comparisons and complex logical combinations, mastering operators will allow you to build flexible and powerful code.
+<hr class="dividerSection" />
+
+Operators are fundamental to writing expressions and logic in C#.
+
+From simple assignment and arithmetic to comparisons and complex logical combinations, mastering operators will allow you to build flexible and powerful code.
+
+<hr class="dividerSection" />
+
+<div class="xrefNav">
+  <div class="xrefItem">
+    <a class="xrefBtn" href="/languages/c-family/c-sharp/basics/core-concepts/console">← Back</a>
+    <div class="xrefTitle">C# - Basics - Core Concepts - Console</div>
+  </div>
+
+  <div class="xrefItem">
+    <a class="xrefBtn" href="/languages/c-family/c-sharp/basics/core-concepts/control-flow">Next →</a>
+    <div class="xrefTitle">C# - Basics - Core Concepts - Control Flow</div>
+  </div>
+</div>

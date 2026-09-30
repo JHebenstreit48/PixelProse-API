@@ -244,12 +244,12 @@ class Program
 
 <div class="xrefNav">
   <div class="xrefItem">
-    <a class="xrefBtn" href="/cplusplus/testing/integration/unit-testing">← Back</a>
+    <a class="xrefBtn" href="/languages/c-family/c-plus-plus/testing/integration/unit-testing">← Back</a>
     <div class="xrefTitle">Topic: C++ - Testing - Engine Integration - Unit Testing in Game Engines</div>
   </div>
 
   <div class="xrefItem">
-    <a class="xrefBtn" href="/c-family/c-sharp/basics/fundamentals/syntax">Next →</a>
+    <a class="xrefBtn" href="/languages/c-family/c-sharp/basics/fundamentals/syntax">Next →</a>
     <div class="xrefTitle">C# - Basics - Fundamentals - Syntax and Types</div>
   </div>
 </div>

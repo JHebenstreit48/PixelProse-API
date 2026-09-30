@@ -6,11 +6,23 @@
 
 <hr class="dividerSection" />
 
-Variables are containers for storing data values.
+<span class="emphasis">Variables</span> are <span class="emphasis">containers</span> for <span class="emphasis">storing</span> <span class="secondEmphasis">data values</span>.
 
 A variable stores a value, it has a type, it does not store a type itself.
 
 An <span class="emphasis">identifier</span> is used when we need to access this memory later in the game or program.
+
+<hr class="dividerSection" />
+
+## Declaring a Variable
+
+<hr class="dividerSection" />
+
+To create a variable in C#, you write the data type first.
+
+After the data type, you need to create an identifier.
+
+An <span class="emphasis">identifier</span> is the unique name that identifies a variable, so it can be referenced later in the program by that name.
 
 <hr class="dividerSection" />
 

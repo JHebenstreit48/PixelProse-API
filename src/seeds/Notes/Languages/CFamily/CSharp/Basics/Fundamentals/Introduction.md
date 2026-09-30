@@ -249,7 +249,7 @@ class Program
   </div>
 
   <div class="xrefItem">
-    <a class="xrefBtn" href="/languages/c-family/c-sharp/basics/fundamentals/syntax">Next →</a>
+    <a class="xrefBtn" href="/languages/c-family/c-sharp/basics/fundamentals/syntax-and-structure">Next →</a>
     <div class="xrefTitle">C# - Basics - Fundamentals - Syntax and Types</div>
   </div>
 </div>

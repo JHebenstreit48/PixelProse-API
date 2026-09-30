@@ -161,103 +161,21 @@ class Program
 
 <div class="xrefBox">
   <span class="emphasis">See:</span>
-  <a href="/c-family/c-sharp/basics/core-concepts/console">
+  <a href="/languages/c-family/c-sharp/basics/core-concepts/console">
     C# → Basics → Core Concepts → Console
   </a>
 </div>
 
 <hr class="dividerSection" />
 
-## Common Data Types
-
-<hr class="dividerSection" />
-
-C# includes several built-in data types covering numbers, text, logical values, and characters.
-
-<hr class="dividerSubsection1" />
-
-#### Type Descriptions
-
-<hr class="dividerSubsection1" />
-
-<table class="notesTable">
-  <thead>
-    <tr class="tableHeader">
-      <th class="tableCellHeader">Type</th>
-      <th class="tableCellHeader">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr class="tableRow">
-      <td class="tableCell"><span class="codeSnip">int</span></td>
-      <td class="tableCell">Integer (whole number)</td>
-    </tr>
-    <tr class="tableRow">
-      <td class="tableCell"><span class="codeSnip">double</span></td>
-      <td class="tableCell">Double-precision floating point</td>
-    </tr>
-    <tr class="tableRow">
-      <td class="tableCell"><span class="codeSnip">char</span></td>
-      <td class="tableCell">Single character</td>
-    </tr>
-    <tr class="tableRow">
-      <td class="tableCell"><span class="codeSnip">string</span></td>
-      <td class="tableCell">Text string</td>
-    </tr>
-    <tr class="tableRow">
-      <td class="tableCell"><span class="codeSnip">bool</span></td>
-      <td class="tableCell">True or false value</td>
-    </tr>
-  </tbody>
-</table>
-
-<hr class="dividerSubsection1" />
-
-#### Type Examples
-
-<hr class="dividerSubsection1" />
-
-<table class="notesTable">
-  <thead>
-    <tr class="tableHeader">
-      <th class="tableCellHeader">Type</th>
-      <th class="tableCellHeader">Example</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr class="tableRow">
-      <td class="tableCell"><span class="codeSnip">int</span></td>
-      <td class="tableCell"><span class="codeSnip">int x = 100;</span></td>
-    </tr>
-    <tr class="tableRow">
-      <td class="tableCell"><span class="codeSnip">double</span></td>
-      <td class="tableCell"><span class="codeSnip">double pi = 3.14;</span></td>
-    </tr>
-    <tr class="tableRow">
-      <td class="tableCell"><span class="codeSnip">char</span></td>
-      <td class="tableCell"><span class="codeSnip">char grade = 'A';</span></td>
-    </tr>
-    <tr class="tableRow">
-      <td class="tableCell"><span class="codeSnip">string</span></td>
-      <td class="tableCell"><span class="codeSnip">string name = "Jane";</span></td>
-    </tr>
-    <tr class="tableRow">
-      <td class="tableCell"><span class="codeSnip">bool</span></td>
-      <td class="tableCell"><span class="codeSnip">bool isReady = true;</span></td>
-    </tr>
-  </tbody>
-</table>
-
-<hr class="dividerSection" />
-
 <div class="xrefNav">
   <div class="xrefItem">
-    <a class="xrefBtn" href="/c-family/c-sharp/basics/fundamentals/introduction">← Back</a>
+    <a class="xrefBtn" href="/languages/c-family/c-sharp/basics/fundamentals/introduction">← Back</a>
     <div class="xrefTitle">C# - Basics - Fundamentals - Introduction</div>
   </div>
 
   <div class="xrefItem">
-    <a class="xrefBtn" href="/c-family/c-sharp/basics/core-concepts/oop">Next →</a>
-    <div class="xrefTitle">Section: C# - Basics - Core Concepts - OOP in C#</div>
+    <a class="xrefBtn" href="/languages/c-family/c-sharp/basics/fundamentals/variables-and-data-types">Next →</a>
+    <div class="xrefTitle">C# - Basics - Fundamentals - Variables and Data Types</div>
   </div>
 </div>

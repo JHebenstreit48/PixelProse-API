@@ -25,6 +25,21 @@
     "category": "Languages/CFamily/CPlusPlus/Basics/Fundamentals"
   },
   {
+    "path": "Languages/CFamily/CSharp/Basics/Fundamentals/Introduction",
+    "title": "Introduction",
+    "category": "Languages/CFamily/CSharp/Basics/Fundamentals"
+  },
+  {
+    "path": "Languages/CFamily/CSharp/Basics/Fundamentals/Syntax",
+    "title": "Syntax",
+    "category": "Languages/CFamily/CSharp/Basics/Fundamentals"
+  },
+  {
+    "path": "Languages/CFamily/CSharp/Basics/Fundamentals/VariablesAndDataTypes",
+    "title": "VariablesAndDataTypes",
+    "category": "Languages/CFamily/CSharp/Basics/Fundamentals"
+  },
+  {
     "path": "Languages/CFamily/CSharp/Basics/CoreConcepts/Collections",
     "title": "Collections",
     "category": "Languages/CFamily/CSharp/Basics/CoreConcepts"
@@ -48,16 +63,6 @@
     "path": "Languages/CFamily/CSharp/Basics/CoreConcepts/Operators",
     "title": "Operators",
     "category": "Languages/CFamily/CSharp/Basics/CoreConcepts"
-  },
-  {
-    "path": "Languages/CFamily/CSharp/Basics/Fundamentals/Introduction",
-    "title": "Introduction",
-    "category": "Languages/CFamily/CSharp/Basics/Fundamentals"
-  },
-  {
-    "path": "Languages/CFamily/CSharp/Basics/Fundamentals/Syntax",
-    "title": "Syntax",
-    "category": "Languages/CFamily/CSharp/Basics/Fundamentals"
   },
   {
     "path": "Languages/CFamily/CSharp/Tools/IDEs/VisualStudio",

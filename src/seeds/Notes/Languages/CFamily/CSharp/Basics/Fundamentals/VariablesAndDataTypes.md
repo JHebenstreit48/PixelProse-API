@@ -24,6 +24,25 @@ After the data type, you need to create an identifier.
 
 An <span class="emphasis">identifier</span> is the unique name that identifies a variable, so it can be referenced later in the program by that name.
 
+Once the variable is declared, you can assign data to it.
+
+```csharp
+string name;
+name = "Kenneth";
+```
+
+You can also declare and assign a variable on a single line.
+
+```csharp
+string name = "Kenneth";
+```
+
+Both approaches produce the exact same result, there is no functional difference between them.
+
+In some cases, you may want to declare a variable without assigning data right away, which requires the two-line approach.
+
+Otherwise, it comes down to personal preference and code readability.
+
 <hr class="dividerSection" />
 
 ## Choosing the Right Data Type
@@ -119,6 +138,46 @@ C# includes several built-in data types covering numbers, text, logical values, 
     </tr>
   </tbody>
 </table>
+
+<hr class="dividerSection" />
+
+## Example: Mailing Label
+
+<hr class="dividerSection" />
+
+A common practice exercise is storing a set of related values, such as a mailing address, in separate string variables, then combining them into a single formatted output.
+
+```csharp
+string firstName = "John";
+string lastName = "Smith";
+string street = "1234 Maple Street";
+string city = "Springfield";
+string country = "USA";
+string zip = "12345";
+
+Console.WriteLine(firstName + " " + lastName);
+Console.WriteLine(street);
+Console.WriteLine(city + ", " + zip);
+Console.WriteLine(country);
+```
+
+This produces the output:
+
+```shell
+John Smith
+1234 Maple Street
+Springfield, 12345
+USA
+```
+
+Each piece of the mailing label is stored in its own variable, making it easy to update any individual value without affecting the rest of the output.
+
+<div class="xrefBox">
+  <span class="emphasis">See:</span>
+  <a href="/languages/c-family/c-sharp/basics/fundamentals/syntax-and-structure">
+    C# → Basics → Fundamentals → Syntax & Structure (concatenation and composite formatting)
+  </a>
+</div>
 
 <hr class="dividerSection" />
 

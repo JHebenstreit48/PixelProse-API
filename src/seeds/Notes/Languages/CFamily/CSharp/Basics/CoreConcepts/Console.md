@@ -69,7 +69,11 @@ Hello, world!
 
 <hr class="dividerSection" />
 
+<hr class="dividerSubsection1" />
+
 ### Console.ReadLine()
+
+<hr class="dividerSubsection1" />
 
 The <span class="codeSnip">ReadLine</span> method waits for the user to enter text and press Enter.
 
@@ -91,13 +95,34 @@ Jordan
 Hello, Jordan!
 ```
 
+<hr class="dividerSubsection1" />
+
+### Console.Read()
+
+<hr class="dividerSubsection1" />
+
+The <span class="codeSnip">Read</span> method reads the next single character from the input stream and returns it.
+
+Unlike <span class="codeSnip">ReadLine</span>, it does not wait for a full line of text, only a single key press.
+
+If no input is given, execution pauses at this line until a key is pressed.
+
+```csharp
+Console.WriteLine("Press any key to continue...");
+Console.Read();
+```
+
 <hr class="dividerSection" />
 
 ## Clearing the Console
 
 <hr class="dividerSection" />
 
+<hr class="dividerSubsection1" />
+
 ### Console.Clear()
+
+<hr class="dividerSubsection1" />
 
 The <span class="codeSnip">Clear</span> method clears the console window, removing all existing text output and resetting the cursor to the top-left corner.
 

@@ -147,6 +147,12 @@ C# includes several built-in data types covering numbers, text, logical values, 
 
 A common practice exercise is storing a set of related values, such as a mailing address, in separate string variables, then combining them into a single formatted output.
 
+<hr class="dividerSubsection1" />
+
+### Method 1: Concatenation
+
+<hr class="dividerSubsection1" />
+
 ```csharp
 string firstName = "John";
 string lastName = "Smith";
@@ -170,7 +176,45 @@ Springfield, 12345
 USA
 ```
 
-Each piece of the mailing label is stored in its own variable, making it easy to update any individual value without affecting the rest of the output.
+<hr class="dividerSubsection1" />
+
+### Method 2: Composite Formatting
+
+<hr class="dividerSubsection1" />
+
+The same mailing label can also be written using composite formatting placeholders combined with the <span class="codeSnip">\n</span> escape character, producing the entire label from a single <span class="codeSnip">Console.WriteLine()</span> call.
+
+```csharp
+string firstName = "John";
+string lastName = "Smith";
+string address = "1234 Maple Street";
+string city = "Springfield";
+string country = "USA";
+string zip = "12345";
+
+Console.WriteLine("First name: {0} \nLast name: {1} \nAddress: {2} \nCity: {3} \nCountry: {4} \nZip: {5}", firstName, lastName, address, city, country, zip);
+```
+
+This produces the output:
+
+```shell
+First name: John
+Last name: Smith
+Address: 1234 Maple Street
+City: Springfield
+Country: USA
+Zip: 12345
+```
+
+<hr class="dividerSubsection1" />
+
+### Choosing a Method
+
+<hr class="dividerSubsection1" />
+
+Each piece of the mailing label is stored in its own variable, making it easy to update any individual value without affecting the rest of the output, regardless of which method is used to display it.
+
+Concatenation can be simpler for a small number of values, while composite formatting keeps the output readable as more variables are added.
 
 <div class="xrefBox">
   <span class="emphasis">See:</span>

@@ -31,7 +31,9 @@ Encapsulation, Inheritance, and Polymorphism are the most emphasized in beginner
 
 <hr class="dividerSection" />
 
-A class defines a blueprint or template for creating objects.
+A class is a user-defined blueprint or prototype from which objects are created.
+
+It combines fields and methods (member functions that define actions) into a single unit.
 
 Classes encapsulate data for the object and methods to operate on that data.
 

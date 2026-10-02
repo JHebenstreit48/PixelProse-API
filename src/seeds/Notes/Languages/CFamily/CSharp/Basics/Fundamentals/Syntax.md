@@ -165,6 +165,10 @@ Every C# application must include a <span class="emphasis">Main</span> method.
 
 This is the <span class="emphasis">entry point</span> of the program, the first thing that runs when the application starts.
 
+<span class="emphasis">Method</span> and <span class="emphasis">function</span> generally refer to the same underlying concept, a block of reusable code.
+
+In practice, <span class="emphasis">method</span> is more often used when working within classes or object-oriented code, while <span class="emphasis">function</span> is sometimes used when writing C# in a more script-like style, though the two terms are frequently used interchangeably.
+
 <span class="emphasis">Main</span> can return <span class="codeSnip">void</span> or <span class="codeSnip">int</span>, and it can accept parameters such as a string array for command-line arguments.
 
 ```csharp

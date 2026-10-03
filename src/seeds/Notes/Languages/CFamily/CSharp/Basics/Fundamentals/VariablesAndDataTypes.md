@@ -265,14 +265,14 @@ Console.Clear();
 // Print the message
 Console.WriteLine("** CHARACTER SHEET **");
 
-Console.WriteLine("Name: " + name);
-Console.WriteLine("Race: " + race);
-Console.WriteLine("Class: " + myClass);
-Console.WriteLine("Strength: " + strength);
-Console.WriteLine("Intellect: " + intellect);
-Console.WriteLine("Stamina: " + stamina);
-Console.WriteLine("Health: " + health);
-Console.WriteLine("Mana: " + mana);
+Console.WriteLine("Name: {0}", name);
+Console.WriteLine("Race: {0}", race);
+Console.WriteLine("Class: {0}", myClass);
+Console.WriteLine("Strength: {0}", strength);
+Console.WriteLine("Intellect: {0}", intellect);
+Console.WriteLine("Stamina: {0}", stamina);
+Console.WriteLine("Health: {0}", health);
+Console.WriteLine("Mana: {0}", mana);
 
 Console.ReadLine();
 ```
@@ -285,7 +285,7 @@ Placeholders are counted separately for each <span class="codeSnip">WriteLine</s
 After the last answer, the console shows only the character sheet:
 
 ```shell
-Character Sheet
+** CHARACTER SHEET **
 Name: Kenneth
 Race: Human
 Class: Wizard
@@ -300,16 +300,15 @@ The final <span class="codeSnip">Console.ReadLine()</span> pauses the program so
 
 The same three lines repeat for every value, which makes the code repetitive.
 
-Every value is stored as a string here because numeric data types have not been covered yet.
+Every value is stored as a string here to keep the example simple, because <span class="codeSnip">ReadLine</span> returns text and storing a typed number in a numeric type needs an extra conversion step.
 
-Numbers such as strength and health are normally stored in numeric types such as <span class="codeSnip">int</span>, which allow math to be done on them.
+Numbers such as strength and health are normally stored in numeric types such as <span class="codeSnip">int</span>, which allow math to be done on them.  
 
 <div class="xrefBox">
-  <span class="emphasis">See:</span>
+  <span class="emphasis">See:</span><br />
   <a href="/languages/c-family/c-sharp/basics/core-concepts/console" target="_blank" rel="noopener noreferrer">
     C# → Basics → Core Concepts → Console
-  </a>
-  <br />
+  </a><br />
   <a href="/languages/c-family/c-sharp/basics/fundamentals/syntax-and-structure" target="_blank" rel="noopener noreferrer">
     C# → Basics → Fundamentals → Syntax & Structure (composite formatting placeholders)
   </a>

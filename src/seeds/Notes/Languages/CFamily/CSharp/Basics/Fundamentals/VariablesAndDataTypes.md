@@ -276,6 +276,7 @@ Console.WriteLine("Mana: {0}", mana);
 
 Console.ReadLine();
 ```
+
 The two comments mark the two halves of the program, reading the input and printing the result.
 
 Each line of the character sheet uses a placeholder, so <span class="codeSnip">{0}</span> is replaced by the one variable listed after the string.

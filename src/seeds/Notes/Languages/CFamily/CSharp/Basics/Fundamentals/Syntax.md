@@ -45,6 +45,12 @@ Console.WriteLine(score); // Outputs: 10
 Console.WriteLine(Score); // Outputs: 20
 ```
 
+Built-in names follow the same rule.
+
+For example, <span class="codeSnip">Console</span> must start with a capital letter, and writing <span class="codeSnip">console</span> produces an error because C# does not recognize it.
+
+By convention, class names in C# start with a capital letter.
+
 <hr class="dividerSection" />
 
 ## Comments in C#
@@ -103,7 +109,7 @@ Everything between the opening and closing markers is ignored by the compiler.
 <div class="centeredBullet">
   <ul class="diamondBullets fullWidthBullet">
     <li><span class="emphasis">Ideal for</span>: detailed documentation, explaining complex logic, or commenting out large sections of code during debugging.</li>
-    <li><span class="emphasis">Limitation</span>: C# does <span class="emphasis">not</span> support nested multi-line comments — placing one <span class="codeSnip">/* */</span> block inside another will cause a syntax error.</li>
+    <li><span class="emphasis">Limitation</span>: C# does <span class="emphasis">not</span> support nested multi-line comments, so placing one <span class="codeSnip">/* */</span> block inside another will cause a syntax error.</li>
   </ul>
 </div>
 
@@ -183,12 +189,67 @@ class Program
 }
 ```
 
+Starting with C# 9, <span class="emphasis">top-level statements</span> let you write code without typing out the namespace, class, or <span class="codeSnip">Main</span> method.
+
+Newer project templates use them by default, and the compiler generates the <span class="codeSnip">Main</span> method for you.
+
+The examples in these notes show <span class="codeSnip">Main</span> explicitly so the program structure is visible.
+
 <div class="xrefBox">
   <span class="emphasis">See:</span>
-  <a href="/languages/c-family/c-sharp/basics/core-concepts/console">
+  <a href="/languages/c-family/c-sharp/basics/core-concepts/console" target="_blank" rel="noopener noreferrer">
     C# → Basics → Core Concepts → Console
   </a>
 </div>
+
+<hr class="dividerSection" />
+
+## Scopes and Curly Braces
+
+<hr class="dividerSection" />
+
+A <span class="emphasis">scope</span> is an area of code defined by a begin curly bracket <span class="codeSnip">{</span> and an end curly bracket <span class="codeSnip">}</span>.
+
+Scopes are used to define what belongs to what.
+
+Everything inside a scope belongs to the thing that scope is attached to.
+
+Every scope needs both a beginning and an end, and the compiler reports an error if one is missing.
+
+```csharp
+using System;
+
+namespace ExampleProject
+{
+    class Program
+    {
+        static void Main()
+        {
+            Console.WriteLine("Hello");
+        }
+    }
+}
+```
+
+<div class="centeredBullet">
+  <ul class="diamondBullets fullWidthBullet">
+    <li>The <span class="emphasis">namespace</span> scope contains the <span class="codeSnip">Program</span> class.</li>
+    <li>The <span class="emphasis">class</span> scope contains the <span class="codeSnip">Main</span> method.</li>
+    <li>The <span class="emphasis">Main</span> scope contains the lines of code that run.</li>
+  </ul>
+</div>
+
+A statement that calls a method, such as <span class="codeSnip">Console.WriteLine</span>, must be written inside another method like <span class="codeSnip">Main</span>.
+
+Placing it directly inside the class, outside any method, causes an error.
+
+Scopes also limit where things can be reached.
+
+Something defined in an <span class="emphasis">outer scope</span> can be used in an <span class="secondEmphasis">inner scope</span>.
+
+Something defined in an <span class="emphasis">inner scope</span> cannot be reached from an <span class="secondEmphasis">outer scope</span>.
+
+This rule matters more once classes, variables, and if statements are in use.
 
 <hr class="dividerSection" />
 
@@ -217,7 +278,7 @@ The <span class="codeSnip">\n</span> can be placed anywhere inside a string to b
 
 <hr class="dividerSection" />
 
-You can combine a variable's value with a string literal using the <span class="codeSnip">+</span> operator.
+You can combine a variable's value with a <span class="emphasis">string literal</span> using the <span class="codeSnip">+</span> operator.
 
 ```csharp
 Console.WriteLine("Hello " + name);
@@ -234,7 +295,7 @@ Console.WriteLine(name + "that's a nice name");
 This produces the output:
 
 ```shell
-Kenneth that's a nice name
+Kenneththat's a nice name
 ```
 
 Notice that C# does not automatically add spacing between concatenated values.
@@ -242,6 +303,42 @@ Notice that C# does not automatically add spacing between concatenated values.
 If the string literal does not include a leading space, the output will run the variable's value and the literal text together with no space in between.
 
 Any spacing you want in the final output must be included manually, either in the string literal itself or as a separate concatenated space.
+
+<hr class="dividerExample" />
+
+#### Example: Space Inside the String Literal
+
+<hr class="dividerExample" />
+
+Adding a space at the start of the string literal, inside the quotation marks, separates the two values.
+
+```csharp
+Console.WriteLine(name + " that's a nice name");
+```
+
+This produces the output:
+
+```shell
+Kenneth that's a nice name
+```
+
+<hr class="dividerExample" />
+
+#### Example: Separate Concatenated Space
+
+<hr class="dividerExample" />
+
+A space can also be added as its own string literal, joined in with another <span class="codeSnip">+</span> operator.
+
+```csharp
+Console.WriteLine(name + " " + "that's a nice name");
+```
+
+This produces the output:
+
+```shell
+Kenneth that's a nice name
+```
 
 <hr class="dividerSection" />
 

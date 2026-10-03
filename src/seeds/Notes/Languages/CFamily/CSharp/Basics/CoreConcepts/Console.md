@@ -14,6 +14,15 @@ You can think of the <span class="emphasis">Console</span> as a toolbox filled w
 
 These tools include methods like <span class="codeSnip">WriteLine</span>, <span class="codeSnip">Write</span>, and <span class="codeSnip">ReadLine</span> that allow you to display messages or collect input from the user.
 
+Accessing any of these tools requires the <span class="emphasis">dot operator</span> (<span class="codeSnip">.</span>), for example <span class="codeSnip">Console.WriteLine</span>.
+
+<div class="xrefBox">
+  <span class="emphasis">See:</span>
+  <a href="/languages/c-family/c-sharp/basics/core-concepts/operators" target="_blank" rel="noopener noreferrer">
+    C# → Basics → Core Concepts → Operators (Dot Operator)
+  </a>
+</div>
+
 In technical terms, <span class="emphasis">Console</span> is a <span class="secondEmphasis">static class</span>, meaning its methods can be used without creating an object instance.
 
 <hr class="dividerSection" />
@@ -43,6 +52,14 @@ Output:
 This is a line of text.
 This is another line.
 ```
+
+The text you want to display goes inside the parentheses.
+
+Text must be wrapped in double quotation marks so C# treats it as a <span class="emphasis">string</span>.
+
+Without the quotation marks, C# reads the text as code and reports an error.
+
+Like every statement, the line ends with a semicolon <span class="codeSnip">;</span>.
 
 <hr class="dividerSubsection1" />
 
@@ -104,6 +121,8 @@ Hello, Jordan!
 The <span class="codeSnip">Read</span> method reads the next single character from the input stream and returns it.
 
 Unlike <span class="codeSnip">ReadLine</span>, it does not wait for a full line of text, only a single key press.
+
+It still waits for the user to press Enter before it returns anything.
 
 If no input is given, execution pauses at this line until a key is pressed.
 

@@ -53,6 +53,38 @@ By convention, class names in C# start with a capital letter.
 
 <hr class="dividerSection" />
 
+## Whitespace
+
+<hr class="dividerSection" />
+
+C# ignores extra <span class="emphasis">whitespace</span> between the parts of a statement, such as spaces, tabs, and blank lines.
+
+What ends a statement is the semicolon <span class="codeSnip">;</span>, not the end of a line.
+
+This means code can be spaced out across several lines to make it easier to read, and it works exactly the same.
+
+```csharp
+Console.WriteLine("Hello");
+```
+
+The same statement written across several lines:
+
+```csharp
+Console.WriteLine(
+    "Hello"
+);
+```
+
+Both versions produce the same output:
+
+```shell
+Hello
+```
+
+Whitespace inside a string literal is part of the text, so it is not ignored.
+
+<hr class="dividerSection" />
+
 ## Comments in C#
 
 <hr class="dividerSection" />

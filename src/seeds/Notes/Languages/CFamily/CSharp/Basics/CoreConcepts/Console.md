@@ -111,6 +111,12 @@ Enter your name:
 Jordan
 Hello, Jordan!
 ```
+<span class="codeSnip">ReadLine</span> can also be called on its own, without storing the result, to pause the program until the user presses Enter.
+
+```csharp
+Console.WriteLine("Press Enter to close the program.");
+Console.ReadLine();
+```
 
 <hr class="dividerSubsection1" />
 
@@ -130,6 +136,8 @@ If no input is given, execution pauses at this line until a key is pressed.
 Console.WriteLine("Press any key to continue...");
 Console.Read();
 ```
+
+For pausing a program, <span class="codeSnip">ReadLine</span> is generally the better choice, because <span class="codeSnip">Read</span> returns only the first character and leaves the rest of the typed line waiting to be read.
 
 <hr class="dividerSection" />
 
@@ -161,6 +169,30 @@ This text will be cleared.
 
 ```shell
 The console has been cleared.
+```
+
+<hr class="dividerExample" />
+
+#### Example: Clear After a Pause
+
+<hr class="dividerExample" />
+
+Clearing right after writing a message removes it before the user can read it.
+
+Pausing first and clearing afterward keeps the message on screen until the user presses Enter.
+
+```csharp
+Console.WriteLine("Press Enter to start.");
+Console.ReadLine();
+Console.Clear();
+Console.WriteLine("Hello, my name is Kenneth.");
+Console.ReadLine();
+```
+
+After Enter is pressed, the console shows only:
+
+```shell
+Hello, my name is Kenneth.
 ```
 
 <hr class="dividerSection" />

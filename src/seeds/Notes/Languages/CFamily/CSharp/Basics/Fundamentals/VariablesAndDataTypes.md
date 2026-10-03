@@ -43,6 +43,52 @@ In some cases, you may want to declare a variable without assigning data right a
 
 Otherwise, it comes down to personal preference and code readability.
 
+Several variables of the same data type can also be declared on one line by separating the identifiers with commas.
+
+<hr class="dividerExample" />
+
+#### Example: Separate Lines vs One Line
+
+<hr class="dividerExample" />
+
+Each variable declared on its own line:
+
+```csharp
+string firstName;
+string lastName;
+string street;
+string city;
+string country;
+string zip;
+```
+
+The same variables declared on one line:
+
+```csharp
+string firstName, lastName, street, city, country, zip;
+```
+
+Both versions behave exactly the same when the code runs, so it only changes how the code reads.
+
+One line takes up less space, but a long line can be harder to read, so separate lines may suit a long list better.
+
+<hr class="dividerSection" />
+
+## Naming Variables
+
+<hr class="dividerSection" />
+
+An identifier cannot be a <span class="emphasis">keyword</span>.
+
+A keyword is a word that already has a special meaning in C#, such as <span class="codeSnip">class</span>, <span class="codeSnip">int</span>, and <span class="codeSnip">string</span>.
+
+Using a keyword as a variable name causes an error, so a different name must be chosen.
+
+```csharp
+string class;    // Error: class is a keyword
+string myClass;  // Valid
+```
+
 <hr class="dividerSection" />
 
 ## Choosing the Right Data Type
@@ -141,6 +187,136 @@ C# includes several built-in data types covering numbers, text, logical values, 
 
 <hr class="dividerSection" />
 
+## Storing User Input in a Variable
+
+<hr class="dividerSection" />
+
+The <span class="codeSnip">Console.ReadLine()</span> method returns the text the user types as a string.
+
+Because it returns a value, the result can be assigned directly to a string variable.
+
+The program pauses on that line until the user presses Enter.
+
+```csharp
+Console.WriteLine("Hello and welcome. Please enter your name:");
+string name = Console.ReadLine();
+Console.WriteLine("Hello " + name + ". Nice to meet you.");
+```
+
+Example interaction:
+
+```shell
+Hello and welcome. Please enter your name:
+Kenneth
+Hello Kenneth. Nice to meet you.
+```
+
+The variable is declared on the line where it is first needed, so it does not have to be declared at the top of the program.
+
+<hr class="dividerExample" />
+
+#### Example: Character Creator
+
+<hr class="dividerExample" />
+
+Each value to collect needs its own variable.
+
+Variables can also be declared together at the top and assigned later as each answer comes in.
+
+This program asks for each value, clears the console after every answer, and then prints a character sheet.
+
+```csharp
+string name, race, myClass, strength, intellect, stamina, health, mana;
+
+// Read the user input
+Console.WriteLine("Hello and welcome to the character creator.");
+Console.WriteLine("Please enter your name:");
+name = Console.ReadLine();
+Console.Clear();
+
+Console.WriteLine("Please enter your race:");
+race = Console.ReadLine();
+Console.Clear();
+
+Console.WriteLine("Please enter your class:");
+myClass = Console.ReadLine();
+Console.Clear();
+
+Console.WriteLine("Please enter your strength:");
+strength = Console.ReadLine();
+Console.Clear();
+
+Console.WriteLine("Please enter your intellect:");
+intellect = Console.ReadLine();
+Console.Clear();
+
+Console.WriteLine("Please enter your stamina:");
+stamina = Console.ReadLine();
+Console.Clear();
+
+Console.WriteLine("Please enter your health:");
+health = Console.ReadLine();
+Console.Clear();
+
+Console.WriteLine("Please enter your mana:");
+mana = Console.ReadLine();
+Console.Clear();
+
+// Print the message
+Console.WriteLine("** CHARACTER SHEET **");
+
+Console.WriteLine("Name: " + name);
+Console.WriteLine("Race: " + race);
+Console.WriteLine("Class: " + myClass);
+Console.WriteLine("Strength: " + strength);
+Console.WriteLine("Intellect: " + intellect);
+Console.WriteLine("Stamina: " + stamina);
+Console.WriteLine("Health: " + health);
+Console.WriteLine("Mana: " + mana);
+
+Console.ReadLine();
+```
+The two comments mark the two halves of the program, reading the input and printing the result.
+
+Each line of the character sheet uses a placeholder, so <span class="codeSnip">{0}</span> is replaced by the one variable listed after the string.
+
+Placeholders are counted separately for each <span class="codeSnip">WriteLine</span> call, so every line here uses <span class="codeSnip">{0}</span>.
+
+After the last answer, the console shows only the character sheet:
+
+```shell
+Character Sheet
+Name: Kenneth
+Race: Human
+Class: Wizard
+Strength: 3
+Intellect: 20
+Stamina: 10
+Health: 100
+Mana: 80
+```
+
+The final <span class="codeSnip">Console.ReadLine()</span> pauses the program so the character sheet stays on screen until Enter is pressed.
+
+The same three lines repeat for every value, which makes the code repetitive.
+
+Every value is stored as a string here because numeric data types have not been covered yet.
+
+Numbers such as strength and health are normally stored in numeric types such as <span class="codeSnip">int</span>, which allow math to be done on them.
+
+<div class="xrefBox">
+  <span class="emphasis">See:</span>
+  <a href="/languages/c-family/c-sharp/basics/core-concepts/console" target="_blank" rel="noopener noreferrer">
+    C# → Basics → Core Concepts → Console
+  </a>
+  <br />
+  <a href="/languages/c-family/c-sharp/basics/fundamentals/syntax-and-structure" target="_blank" rel="noopener noreferrer">
+    C# → Basics → Fundamentals → Syntax & Structure (composite formatting placeholders)
+  </a>
+</div>
+
+<hr class="dividerSection" />
+
 ## Example: Mailing Label
 
 <hr class="dividerSection" />
@@ -218,7 +394,7 @@ Concatenation can be simpler for a small number of values, while composite forma
 
 <div class="xrefBox">
   <span class="emphasis">See:</span>
-  <a href="/languages/c-family/c-sharp/basics/fundamentals/syntax-and-structure">
+  <a href="/languages/c-family/c-sharp/basics/fundamentals/syntax-and-structure" target="_blank" rel="noopener noreferrer">
     C# → Basics → Fundamentals → Syntax & Structure (concatenation and composite formatting)
   </a>
 </div>

@@ -8,6 +8,12 @@ In C#, control flow is determined through conditional statements and loops, allo
 
 Understanding control flow is essential for writing programs that can react to different inputs and conditions.
 
+For example, in a game an enemy should only attack the player when it is close enough to hit.
+
+Control flow lets the attack code run only under that condition.
+
+Without it, the enemy would attack constantly, no matter how close it is.
+
 <hr class="dividerSection" />
 
 ## If Statements
@@ -34,6 +40,40 @@ if (!isGameOver)
   </ul>
 </div>
 
+<hr class="dividerExample" />
+
+#### Example: Condition True vs False
+
+<hr class="dividerExample" />
+
+When the condition is true, the code inside the curly braces runs.
+
+```csharp
+bool example = true;
+
+if (example)
+{
+    Console.WriteLine("Attack Player");
+}
+```
+
+This produces the output:
+
+```shell
+Attack Player
+```
+
+When the condition is false, the code inside the curly braces is skipped and nothing is printed.
+
+```csharp
+bool example2 = false;
+
+if (example2)
+{
+    Console.WriteLine("Attack Player");
+}
+```
+
 <hr class="dividerSection" />
 
 ## Boolean Expressions
@@ -57,6 +97,67 @@ Common boolean values:
 bool isReady = true;
 bool isPaused = false;
 ```
+
+<hr class="dividerSection" />
+
+## Comparing Values in a Condition
+
+<hr class="dividerSection" />
+
+A condition does not have to be a bool variable.
+
+It can be any expression that results in true or false, such as a comparison between two values.
+
+The <span class="codeSnip">==</span> operator checks whether two values are equal.
+
+A single <span class="codeSnip">=</span> assigns a value instead of comparing, so conditions use two.
+
+```csharp
+string command = "attack";
+
+if (command == "attack")
+{
+    Console.WriteLine("Attack Player");
+}
+```
+
+This produces the output:
+
+```shell
+Attack Player
+```
+
+The condition is true because <span class="codeSnip">command</span> holds the value <span class="codeSnip">"attack"</span>.
+
+If <span class="codeSnip">command</span> held a different value, such as <span class="codeSnip">"run"</span>, the condition would be false and the code would be skipped.
+
+<div class="xrefBox">
+  <span class="emphasis">See:</span>
+  <a href="/languages/c-family/c-sharp/basics/core-concepts/operators" target="_blank" rel="noopener noreferrer">
+    C# → Basics → Core Concepts → Operators (Comparison Operators)
+  </a>
+</div>
+
+<hr class="dividerExample" />
+
+#### Example: Capital Letters in String Comparisons
+
+<hr class="dividerExample" />
+
+String comparisons are <span class="emphasis">case-sensitive</span>.
+
+Capital and lowercase letters count as different characters, so <span class="codeSnip">"attack"</span> and <span class="codeSnip">"Attack"</span> are not equal.
+
+```csharp
+string command = "attack";
+
+if (command == "Attack")
+{
+    Console.WriteLine("Attack Player");  // Never runs
+}
+```
+
+Nothing is printed, because the two strings are not equal.
 
 <hr class="dividerSection" />
 
@@ -257,6 +358,69 @@ if (score >= 90) {
     console.log("Keep studying!");
 }
 ```
+
+<hr class="dividerSection" />
+
+## Multiple If Statements
+
+<hr class="dividerSection" />
+
+A program can have more than one if statement.
+
+Each if statement is checked on its own, so every condition is tested in turn.
+
+Combined with user input, this lets a program react to different commands.
+
+<hr class="dividerExample" />
+
+#### Example: Reading a Command
+
+<hr class="dividerExample" />
+
+```csharp
+Console.WriteLine("Enter your command: attack or run");
+string command = Console.ReadLine();
+
+if (command == "attack")
+{
+    Console.WriteLine("Attack Player");
+}
+
+if (command == "run")
+{
+    Console.WriteLine("Run away");
+}
+
+Console.ReadLine();
+```
+
+If the user types attack, the program prints:
+
+```shell
+Enter your command: attack or run
+attack
+Attack Player
+```
+
+If the user types run, the program prints:
+
+```shell
+Enter your command: attack or run
+run
+Run away
+```
+
+Text that matches neither condition, such as jump, prints nothing.
+
+The typed text must match exactly, including capital letters.
+
+The final <span class="codeSnip">Console.ReadLine()</span> pauses the program so the output stays on screen until Enter is pressed.
+
+Separate if statements are different from an else if chain.
+
+In an else if chain, once one condition is true the rest are skipped.
+
+With separate if statements, every condition is still checked, so if more than one is true, more than one block runs.
 
 <hr class="dividerSection" />
 

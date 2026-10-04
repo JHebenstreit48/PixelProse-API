@@ -161,6 +161,153 @@ Nothing is printed, because the two strings are not equal.
 
 <hr class="dividerSection" />
 
+## Comparing Numbers in a Condition
+
+<hr class="dividerSection" />
+
+Conditions can compare numbers as well as strings.
+
+The comparison operators work on numbers.
+
+<div class="centeredBullet">
+  <ul class="diamondBullets fullWidthBullet">
+    <li><span class="codeSnip">&gt;</span>, greater than</li>
+    <li><span class="codeSnip">&gt;=</span>, greater than or equal to</li>
+    <li><span class="codeSnip">&lt;</span>, less than</li>
+    <li><span class="codeSnip">&lt;=</span>, less than or equal to</li>
+  </ul>
+</div>
+
+A number typed into the console must be converted with <span class="codeSnip">int.Parse</span> before it can be stored in an int.
+
+```csharp
+Console.WriteLine("Please enter your age");
+
+int age = int.Parse(Console.ReadLine());
+
+Console.Clear();
+
+Console.WriteLine("Your age is " + age);
+
+if (age >= 18)
+{
+    Console.WriteLine("Welcome to the program");
+}
+
+if (age <= 17)
+{
+    Console.WriteLine("You are not old enough");
+}
+```
+
+Joining text and a number with <span class="codeSnip">+</span> converts the number to text, so the age is printed as part of the message.
+
+Entering 21 prints:
+
+```shell
+Your age is 21
+Welcome to the program
+```
+
+Entering 17 prints:
+
+```shell
+Your age is 17
+You are not old enough
+```
+
+<div class="xrefBox">
+  <span class="emphasis">See:</span><br />
+  <a href="/languages/c-family/c-sharp/basics/core-concepts/operators" target="_blank" rel="noopener noreferrer">
+    C# → Basics → Core Concepts → Operators (Comparison Operators)
+  </a><br />
+  <a href="/languages/c-family/c-sharp/basics/fundamentals/variables-and-data-types" target="_blank" rel="noopener noreferrer">
+    C# → Basics → Fundamentals → Variables and Data Types (Converting Input to Numbers)
+  </a>
+</div>
+
+<hr class="dividerExample" />
+
+#### Example: Why == and != Do Not Work for a Range
+
+<hr class="dividerExample" />
+
+The <span class="codeSnip">==</span> operator only matches one exact value, so it does not cover everyone who is 18 or older.
+
+```csharp
+if (age == 18)
+{
+    Console.WriteLine("Welcome to the program");
+}
+
+if (age != 18)
+{
+    Console.WriteLine("You are not old enough");
+}
+```
+
+Entering 18 prints the welcome message.
+
+Entering 17 prints the not old enough message, which is correct.
+
+Entering 21 also prints the not old enough message, which is wrong, because 21 is old enough.
+
+<span class="codeSnip">!=</span> matches every number except 18, including all the numbers above it.
+
+<hr class="dividerExample" />
+
+#### Example: Greater Than vs Greater Than or Equal To
+
+<hr class="dividerExample" />
+
+```csharp
+if (age > 18)
+{
+    Console.WriteLine("Welcome to the program");
+}
+```
+
+With <span class="codeSnip">&gt;</span>, entering 18 prints nothing, because 18 is not greater than 18.
+
+Changing it to <span class="codeSnip">&gt;=</span> includes 18.
+
+<hr class="dividerExample" />
+
+#### Example: Equivalent Conditions
+
+<hr class="dividerExample" />
+
+Different conditions can mean the same thing for whole numbers.
+
+The same program can use <span class="codeSnip">&gt; 17</span> and <span class="codeSnip">&lt; 18</span> instead of <span class="codeSnip">&gt;= 18</span> and <span class="codeSnip">&lt;= 17</span>.
+
+```csharp
+if (age > 17)
+{
+    Console.WriteLine("Welcome to the program");
+}
+
+if (age < 18)
+{
+    Console.WriteLine("You are not old enough");
+}
+```
+
+Entering 17 prints the not old enough message, and entering 18 prints the welcome message, the same as before.
+
+<div class="centeredBullet">
+  <ul class="diamondBullets fullWidthBullet">
+    <li><span class="codeSnip">age &gt;= 18</span> and <span class="codeSnip">age &gt; 17</span> give the same result.</li>
+    <li><span class="codeSnip">age &lt;= 17</span> and <span class="codeSnip">age &lt; 18</span> give the same result.</li>
+  </ul>
+</div>
+
+Which one to use is a matter of preference, and the one that reads most clearly is usually the better choice.
+
+This only holds for whole numbers, because a value such as 17.5 is less than 18 but not less than or equal to 17.
+
+<hr class="dividerSection" />
+
 ## Nested If Statements
 
 <hr class="dividerSection" />
@@ -279,6 +426,18 @@ The else statement specifies a block of code to run if the condition in the if s
 
 It acts as a default action when none of the previous if conditions are met.
 
+An else has no condition of its own.
+
+An else cannot stand alone, so it must come directly after an if statement, and without one the code causes an error.
+
+An else pairs with the if statement directly above it, and it ignores any other if statements further up.
+
+When the if condition is true, the else block is skipped.
+
+When the if condition is false, the program jumps to the else block.  
+
+An else is a better choice than a second if for the opposite case, because a second if would still be checked even when the first one was true.
+
 <hr class="dividerExample" />
 
 #### Example: Else Statement in C#
@@ -378,15 +537,15 @@ Combined with user input, this lets a program react to different commands.
 <hr class="dividerExample" />
 
 ```csharp
-Console.WriteLine("Enter your command: attack or run");
+Console.WriteLine("Enter your command: Run, Attack");
 string command = Console.ReadLine();
 
-if (command == "attack")
+if (command == "Attack")
 {
     Console.WriteLine("Attack Player");
 }
 
-if (command == "run")
+if (command == "Run")
 {
     Console.WriteLine("Run away");
 }
@@ -394,25 +553,25 @@ if (command == "run")
 Console.ReadLine();
 ```
 
-If the user types attack, the program prints:
+If the user types Attack, the program prints:
 
 ```shell
-Enter your command: attack or run
-attack
+Enter your command: Run, Attack
+Attack
 Attack Player
 ```
 
-If the user types run, the program prints:
+If the user types Run, the program prints:
 
 ```shell
-Enter your command: attack or run
-run
+Enter your command: Run, Attack
+Run
 Run away
 ```
 
 Text that matches neither condition, such as jump, prints nothing.
 
-The typed text must match exactly, including capital letters.
+The typed text must match exactly, including capital letters, so typing attack in lowercase also prints nothing.
 
 The final <span class="codeSnip">Console.ReadLine()</span> pauses the program so the output stays on screen until Enter is pressed.
 
@@ -420,7 +579,7 @@ Separate if statements are different from an else if chain.
 
 In an else if chain, once one condition is true the rest are skipped.
 
-With separate if statements, every condition is still checked, so if more than one is true, more than one block runs.
+With separate if statements, every condition is still checked, so if more than one is true, more than one block runs.  
 
 <hr class="dividerSection" />
 

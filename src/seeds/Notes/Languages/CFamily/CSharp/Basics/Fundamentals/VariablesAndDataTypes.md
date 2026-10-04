@@ -43,6 +43,50 @@ In some cases, you may want to declare a variable without assigning data right a
 
 Otherwise, it comes down to personal preference and code readability.
 
+A variable must be assigned a value before it is used.
+
+Using a variable that has not been assigned a value causes an error.
+
+```csharp
+int result;
+
+Console.WriteLine("The result is: {0}", result);  // Error: use of unassigned local variable
+```
+
+Assigning a starting value fixes the error.
+
+For numbers, 0 is a common starting value.
+
+```csharp
+int result = 0;
+
+Console.WriteLine("The result is: {0}", result);
+```
+
+This produces the output:
+
+```shell
+The result is: 0
+```
+
+The same rule applies to every variable that is used in a calculation.
+
+```csharp
+int first;
+int second;
+
+int result = first + second;  // Error: use of unassigned local variable
+```
+
+Giving <span class="codeSnip">first</span> and <span class="codeSnip">second</span> starting values fixes it.
+
+```csharp
+int first = 0;
+int second = 0;
+
+int result = first + second;
+```
+
 Several variables of the same data type can also be declared on one line by separating the identifiers with commas.
 
 <hr class="dividerExample" />
@@ -103,6 +147,207 @@ To store text, such as a name, you use a <span class="emphasis">string</span> va
 
 To store a number, such as health, you use an <span class="emphasis">integer</span> variable, since numbers support mathematical operations that a string cannot.
 
+An <span class="codeSnip">int</span> stores <span class="emphasis">whole numbers</span>, such as 1, 2, 3, and 4.
+
+A <span class="codeSnip">float</span> stores numbers with a <span class="emphasis">decimal part</span>, such as 1.5.
+
+A <span class="codeSnip">double</span> also stores decimal numbers, but with more precision than a float, meaning more digits after the decimal point.
+
+If a number does not need decimals, use an <span class="codeSnip">int</span>.
+
+If it does, use a <span class="codeSnip">float</span>.
+
+A float is usually enough for values like a character's speed, where a value between 1 and 2, such as 1.5, may be needed.
+
+A double is the better choice when extra precision matters.
+
+<hr class="dividerExample" />
+
+#### Example: Adding Strings vs Integers
+
+<hr class="dividerExample" />
+
+The <span class="codeSnip">+</span> operator joins strings together, but adds numbers.
+
+Adding two strings joins them instead of adding them as numbers.
+
+```csharp
+string first = "1";
+string second = "2";
+
+string result = first + second;
+
+Console.WriteLine("Result {0}", result);
+```
+
+This produces the output:
+
+```shell
+Result 12
+```
+
+To add them as numbers, change the type to <span class="codeSnip">int</span> on all three variables and remove the quotation marks around the values.
+
+```csharp
+int first = 1;
+int second = 2;
+
+int result = first + second;
+
+Console.WriteLine("Result {0}", result);
+```
+
+This produces the output:
+
+```shell
+Result 3
+```
+
+Quotation marks create text, so a value written inside them is a string even when it looks like a number.
+
+Strings also cannot be subtracted, multiplied, or divided, which causes an error.
+
+```csharp
+Console.WriteLine("4" / "2");  // Error: operator / cannot be applied to strings
+```
+
+<hr class="dividerExample" />
+
+#### Example: Dividing Integers vs Floats
+
+<hr class="dividerExample" />
+
+Dividing two ints gives an int, so the decimal part of the answer is discarded.
+
+```csharp
+int first = 1;
+int second = 2;
+
+int result = first / second;
+
+Console.WriteLine("Result {0}", result);
+```
+
+This produces the output:
+
+```shell
+Result 0
+```
+
+Changing the variables to floats keeps the decimal part of the answer.
+
+```csharp
+float first = 1;
+float second = 2;
+
+float result = first / second;
+
+Console.WriteLine("Result {0}", result);
+```
+
+This produces the output:
+
+```shell
+Result 0.5
+```
+
+The <span class="codeSnip">result</span> variable is a float too, so it can hold the decimal part.
+
+<hr class="dividerSubsection1" />
+
+### Comparison: Strings and Numbers in C# vs JavaScript
+
+<hr class="dividerSubsection1" />
+
+Both languages join strings with the <span class="codeSnip">+</span> operator, but they differ when other math is used on strings and when numbers are divided.
+
+<div class="tablePairSideBySide">
+  <div class="tableWrapper">
+    <table class="notesTable">
+      <thead>
+        <tr class="tableHeader">
+          <th class="tableCellHeader">Expression</th>
+          <th class="tableCellHeader">C#</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="tableRow">
+          <td class="tableCell"><span class="codeSnip">"1" + "2"</span></td>
+          <td class="tableCell"><span class="codeSnip">12</span> (joined)</td>
+        </tr>
+        <tr class="tableRow">
+          <td class="tableCell"><span class="codeSnip">1 + 2</span></td>
+          <td class="tableCell"><span class="codeSnip">3</span></td>
+        </tr>
+        <tr class="tableRow">
+          <td class="tableCell"><span class="codeSnip">"4" / "2"</span></td>
+          <td class="tableCell">Error</td>
+        </tr>
+        <tr class="tableRow">
+          <td class="tableCell"><span class="codeSnip">1 / 2</span></td>
+          <td class="tableCell"><span class="codeSnip">0</span> (two ints)</td>
+        </tr>
+        <tr class="tableRow">
+          <td class="tableCell">Number types</td>
+          <td class="tableCell"><span class="codeSnip">int</span>, <span class="codeSnip">float</span>, <span class="codeSnip">double</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="tableWrapper">
+    <table class="notesTable">
+      <thead>
+        <tr class="tableHeader">
+          <th class="tableCellHeader">Expression</th>
+          <th class="tableCellHeader">JavaScript</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="tableRow">
+          <td class="tableCell"><span class="codeSnip">"1" + "2"</span></td>
+          <td class="tableCell"><span class="codeSnip">12</span> (joined)</td>
+        </tr>
+        <tr class="tableRow">
+          <td class="tableCell"><span class="codeSnip">1 + 2</span></td>
+          <td class="tableCell"><span class="codeSnip">3</span></td>
+        </tr>
+        <tr class="tableRow">
+          <td class="tableCell"><span class="codeSnip">"4" / "2"</span></td>
+          <td class="tableCell"><span class="codeSnip">2</span> (converted)</td>
+        </tr>
+        <tr class="tableRow">
+          <td class="tableCell"><span class="codeSnip">1 / 2</span></td>
+          <td class="tableCell"><span class="codeSnip">0.5</span></td>
+        </tr>
+        <tr class="tableRow">
+          <td class="tableCell">Number types</td>
+          <td class="tableCell">One number type</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+In JavaScript, only the <span class="codeSnip">+</span> operator joins strings.
+
+For subtraction, multiplication, and division, JavaScript converts the strings to numbers first.
+
+```js
+console.log("1" + "2");  // 12
+console.log("4" / "2");  // 2
+```
+
+C# never converts a string to a number for math, so the same division is an error.
+
+```csharp
+Console.WriteLine("4" / "2");  // Error: operator / cannot be applied to strings
+```
+
+JavaScript also has a single number type, so <span class="codeSnip">1 / 2</span> gives <span class="codeSnip">0.5</span>.
+
+In C#, dividing two ints gives an int, so the result is <span class="codeSnip">0</span> unless the values are floats.
+
 <hr class="dividerSection" />
 
 ## Common Data Types
@@ -128,6 +373,10 @@ C# includes several built-in data types covering numbers, text, logical values, 
     <tr class="tableRow">
       <td class="tableCell"><span class="codeSnip">int</span></td>
       <td class="tableCell">Integer (whole number)</td>
+    </tr>
+    <tr class="tableRow">
+      <td class="tableCell"><span class="codeSnip">float</span></td>
+      <td class="tableCell">Single-precision floating point (decimal number)</td>
     </tr>
     <tr class="tableRow">
       <td class="tableCell"><span class="codeSnip">double</span></td>
@@ -167,6 +416,10 @@ C# includes several built-in data types covering numbers, text, logical values, 
       <td class="tableCell"><span class="codeSnip">int x = 100;</span></td>
     </tr>
     <tr class="tableRow">
+      <td class="tableCell"><span class="codeSnip">float</span></td>
+      <td class="tableCell"><span class="codeSnip">float speed = 1.5f;</span></td>
+    </tr>
+    <tr class="tableRow">
       <td class="tableCell"><span class="codeSnip">double</span></td>
       <td class="tableCell"><span class="codeSnip">double pi = 3.14;</span></td>
     </tr>
@@ -184,6 +437,10 @@ C# includes several built-in data types covering numbers, text, logical values, 
     </tr>
   </tbody>
 </table>
+
+A decimal number written in code is a <span class="codeSnip">double</span> by default.
+
+A float value therefore ends with <span class="codeSnip">f</span>, as in <span class="codeSnip">1.5f</span>, and without it assigning the value to a float causes an error.
 
 <hr class="dividerSection" />
 
@@ -314,6 +571,143 @@ Numbers such as strength and health are normally stored in numeric types such as
     C# → Basics → Fundamentals → Syntax & Structure (composite formatting placeholders)
   </a>
 </div>
+
+<hr class="dividerSection" />
+
+## Converting Input to Numbers
+
+<hr class="dividerSection" />
+
+The <span class="codeSnip">ReadLine</span> method always returns a string.
+
+To store the input in a numeric variable, the text must be converted to a number first.
+
+Assigning the result of <span class="codeSnip">ReadLine</span> directly to an int causes an error.
+
+```csharp
+int first = 0;
+int second = 0;
+
+Console.WriteLine("Enter the first number");
+
+first = Console.ReadLine();  // Error: cannot implicitly convert type 'string' to 'int'
+```
+
+The <span class="codeSnip">ReadLine</span> method takes a string from the console and tries to send it to the variable on the left side of the <span class="codeSnip">=</span>.
+
+A string cannot be stored in an int, so this is the same as assigning quoted text to an int.
+
+```csharp
+first = "5";  // Error: cannot implicitly convert type 'string' to 'int'
+```
+
+The <span class="codeSnip">Parse</span> method fixes this by converting a string into a number.
+
+<span class="codeSnip">int.Parse</span> takes a string and converts it into an int.
+
+As with <span class="codeSnip">WriteLine</span>, the value the method works on goes inside the parentheses, so <span class="codeSnip">Console.ReadLine()</span> can be placed there directly.
+
+```csharp
+first = int.Parse(Console.ReadLine());
+```
+
+Each numeric type has its own <span class="codeSnip">Parse</span>, such as <span class="codeSnip">float.Parse</span> for a float.
+
+If the text cannot be turned into a number, such as when a letter is typed, the program stops with an exception when it reaches that line.
+
+<hr class="dividerExample" />
+
+#### Example: Adding Two Numbers
+
+<hr class="dividerExample" />
+
+```csharp
+int first = 0;
+int second = 0;
+
+Console.WriteLine("Enter the first number");
+
+// int.Parse takes the text from the console and turns it
+// into an int
+first = int.Parse(Console.ReadLine());
+
+Console.Clear();
+
+Console.WriteLine("Enter the second number");
+
+second = int.Parse(Console.ReadLine());
+
+int result = first + second;
+
+Console.Clear();
+
+Console.WriteLine("The result is: {0}", result);
+
+Console.ReadLine();
+```
+
+After the second answer, the console shows only the result:
+
+```shell
+The result is: 10
+```
+
+This example was run with 5 and 5.
+
+The separate <span class="codeSnip">result</span> variable is not required.
+
+The sum can be calculated directly inside <span class="codeSnip">WriteLine</span>, which removes one variable.
+
+```csharp
+Console.WriteLine("The result of first + second is {0}", first + second);
+```
+
+With 5 and 6, this produces the output:
+
+```shell
+The result of first + second is 11
+```
+
+<hr class="dividerExample" />
+
+#### Example: Calculator with Floats
+
+<hr class="dividerExample" />
+
+The same approach works for every math operation.
+
+Using <span class="codeSnip">float</span> and <span class="codeSnip">float.Parse</span> keeps the decimal part of the division.
+
+```csharp
+float first = 0;
+float second = 0;
+
+Console.WriteLine("Enter the first number");
+first = float.Parse(Console.ReadLine());
+Console.Clear();
+
+Console.WriteLine("Enter the second number");
+second = float.Parse(Console.ReadLine());
+Console.Clear();
+
+Console.WriteLine("The result of first + second is {0}", first + second);
+Console.WriteLine("The result of first - second is {0}", first - second);
+Console.WriteLine("The result of first / second is {0}", first / second);
+Console.WriteLine("The result of first * second is {0}", first * second);
+
+Console.ReadLine();
+```
+
+After the second answer, the console shows only the results:
+
+```shell
+The result of first + second is 14
+The result of first - second is 6
+The result of first / second is 2.5
+The result of first * second is 40
+```
+
+This example was run with 10 and 4.
 
 <hr class="dividerSection" />
 

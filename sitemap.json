@@ -5,6 +5,26 @@
     "category": "Languages/Java"
   },
   {
+    "path": "Languages/Java/Basics/Fundamentals/Introduction",
+    "title": "Introduction",
+    "category": "Languages/Java/Basics/Fundamentals"
+  },
+  {
+    "path": "Languages/Java/Basics/Fundamentals/SetupAndRunning",
+    "title": "SetupAndRunning",
+    "category": "Languages/Java/Basics/Fundamentals"
+  },
+  {
+    "path": "Languages/Java/Basics/Fundamentals/SyntaxAndStructure",
+    "title": "SyntaxAndStructure",
+    "category": "Languages/Java/Basics/Fundamentals"
+  },
+  {
+    "path": "Languages/CFamily/CPlusPlus/Basics/Fundamentals/Introduction",
+    "title": "Introduction",
+    "category": "Languages/CFamily/CPlusPlus/Basics/Fundamentals"
+  },
+  {
     "path": "Languages/CFamily/C/Basics/Fundamentals/History",
     "title": "History",
     "category": "Languages/CFamily/C/Basics/Fundamentals"
@@ -18,11 +38,6 @@
     "path": "Languages/CFamily/C/Basics/Fundamentals/Syntax",
     "title": "Syntax",
     "category": "Languages/CFamily/C/Basics/Fundamentals"
-  },
-  {
-    "path": "Languages/CFamily/CPlusPlus/Basics/Fundamentals/Introduction",
-    "title": "Introduction",
-    "category": "Languages/CFamily/CPlusPlus/Basics/Fundamentals"
   },
   {
     "path": "Languages/CFamily/CSharp/Basics/CoreConcepts/Collections",
@@ -50,6 +65,11 @@
     "category": "Languages/CFamily/CSharp/Basics/CoreConcepts"
   },
   {
+    "path": "Languages/CFamily/CSharp/Tools/IDEs/VisualStudio",
+    "title": "VisualStudio",
+    "category": "Languages/CFamily/CSharp/Tools/IDEs"
+  },
+  {
     "path": "Languages/CFamily/CSharp/Basics/Fundamentals/Introduction",
     "title": "Introduction",
     "category": "Languages/CFamily/CSharp/Basics/Fundamentals"
@@ -63,10 +83,5 @@
     "path": "Languages/CFamily/CSharp/Basics/Fundamentals/VariablesAndDataTypes",
     "title": "VariablesAndDataTypes",
     "category": "Languages/CFamily/CSharp/Basics/Fundamentals"
-  },
-  {
-    "path": "Languages/CFamily/CSharp/Tools/IDEs/VisualStudio",
-    "title": "VisualStudio",
-    "category": "Languages/CFamily/CSharp/Tools/IDEs"
   }
 ]

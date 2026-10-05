@@ -14,6 +14,15 @@ You can think of the <span class="emphasis">Console</span> as a toolbox filled w
 
 These tools include methods like <span class="codeSnip">WriteLine</span>, <span class="codeSnip">Write</span>, and <span class="codeSnip">ReadLine</span> that allow you to display messages or collect input from the user.
 
+Accessing any of these tools requires the <span class="emphasis">dot operator</span> (<span class="codeSnip">.</span>), for example <span class="codeSnip">Console.WriteLine</span>.
+
+<div class="xrefBox">
+  <span class="emphasis">See:</span>
+  <a href="/languages/c-family/c-sharp/basics/core-concepts/operators" target="_blank" rel="noopener noreferrer">
+    C# → Basics → Core Concepts → Operators (Dot Operator)
+  </a>
+</div>
+
 In technical terms, <span class="emphasis">Console</span> is a <span class="secondEmphasis">static class</span>, meaning its methods can be used without creating an object instance.
 
 <hr class="dividerSection" />
@@ -44,6 +53,14 @@ This is a line of text.
 This is another line.
 ```
 
+The text you want to display goes inside the parentheses.
+
+Text must be wrapped in double quotation marks so C# treats it as a <span class="emphasis">string</span>.
+
+Without the quotation marks, C# reads the text as code and reports an error.
+
+Like every statement, the line ends with a semicolon <span class="codeSnip">;</span>.
+
 <hr class="dividerSubsection1" />
 
 ### Console.Write()
@@ -69,7 +86,11 @@ Hello, world!
 
 <hr class="dividerSection" />
 
+<hr class="dividerSubsection1" />
+
 ### Console.ReadLine()
+
+<hr class="dividerSubsection1" />
 
 The <span class="codeSnip">ReadLine</span> method waits for the user to enter text and press Enter.
 
@@ -90,6 +111,33 @@ Enter your name:
 Jordan
 Hello, Jordan!
 ```
+<span class="codeSnip">ReadLine</span> can also be called on its own, without storing the result, to pause the program until the user presses Enter.
+
+```csharp
+Console.WriteLine("Press Enter to close the program.");
+Console.ReadLine();
+```
+
+<hr class="dividerSubsection1" />
+
+### Console.Read()
+
+<hr class="dividerSubsection1" />
+
+The <span class="codeSnip">Read</span> method reads the next single character from the input stream and returns it.
+
+Unlike <span class="codeSnip">ReadLine</span>, it does not wait for a full line of text, only a single key press.
+
+It still waits for the user to press Enter before it returns anything.
+
+If no input is given, execution pauses at this line until a key is pressed.
+
+```csharp
+Console.WriteLine("Press any key to continue...");
+Console.Read();
+```
+
+For pausing a program, <span class="codeSnip">ReadLine</span> is generally the better choice, because <span class="codeSnip">Read</span> returns only the first character and leaves the rest of the typed line waiting to be read.
 
 <hr class="dividerSection" />
 
@@ -97,7 +145,11 @@ Hello, Jordan!
 
 <hr class="dividerSection" />
 
+<hr class="dividerSubsection1" />
+
 ### Console.Clear()
+
+<hr class="dividerSubsection1" />
 
 The <span class="codeSnip">Clear</span> method clears the console window, removing all existing text output and resetting the cursor to the top-left corner.
 
@@ -117,6 +169,30 @@ This text will be cleared.
 
 ```shell
 The console has been cleared.
+```
+
+<hr class="dividerExample" />
+
+#### Example: Clear After a Pause
+
+<hr class="dividerExample" />
+
+Clearing right after writing a message removes it before the user can read it.
+
+Pausing first and clearing afterward keeps the message on screen until the user presses Enter.
+
+```csharp
+Console.WriteLine("Press Enter to start.");
+Console.ReadLine();
+Console.Clear();
+Console.WriteLine("Hello, my name is Kenneth.");
+Console.ReadLine();
+```
+
+After Enter is pressed, the console shows only:
+
+```shell
+Hello, my name is Kenneth.
 ```
 
 <hr class="dividerSection" />

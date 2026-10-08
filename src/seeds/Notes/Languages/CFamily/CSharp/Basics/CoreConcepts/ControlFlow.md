@@ -2,6 +2,10 @@
 
 <hr class="dividerSection" />
 
+## Why Programs Need Control Flow
+
+<hr class="dividerSection" />
+
 Control flow in programming refers to the order in which individual instructions, statements, or function calls are executed or evaluated.
 
 In C#, control flow is determined through conditional statements and loops, allowing programs to make decisions and repeat actions.
@@ -308,6 +312,209 @@ This only holds for whole numbers, because a value such as 17.5 is less than 18 
 
 <hr class="dividerSection" />
 
+## Combining Conditions in One If Statement
+
+<hr class="dividerSection" />
+
+A condition can test more than one thing at once.
+
+The <span class="codeSnip">&amp;&amp;</span> operator means and, so the combined condition is true only when both sides are true.
+
+This makes it possible to check that a value falls inside a range.
+
+<div class="xrefBox">
+  <span class="emphasis">See:</span>
+  <a href="/languages/c-family/c-sharp/basics/core-concepts/operators" target="_blank" rel="noopener noreferrer">
+    C# → Basics → Core Concepts → Operators (Logical Operators)
+  </a>
+</div>
+
+<hr class="dividerExample" />
+
+#### Example: Overlapping Conditions
+
+<hr class="dividerExample" />
+
+A warning system should print one message that matches the player's health.
+
+```csharp
+int health = 100;
+
+if (health == 100)
+{
+    Console.WriteLine("You have full health!");
+}
+
+if (health >= 75)
+{
+    Console.WriteLine("You are almost at full health");
+}
+```
+
+With a health of 100, this prints both messages:
+
+```shell
+You have full health!
+You are almost at full health
+```
+
+100 is equal to 100 and also greater than or equal to 75, so both conditions are true and both blocks run.
+
+<hr class="dividerExample" />
+
+#### Example: Fixing It with a Range
+
+<hr class="dividerExample" />
+
+Adding a second condition with <span class="codeSnip">&amp;&amp;</span> limits the second block to health from 75 to 99.
+
+```csharp
+if (health == 100)
+{
+    Console.WriteLine("You have full health!");
+}
+
+if (health >= 75 && health <= 99)
+{
+    Console.WriteLine("You are almost at full health");
+}
+```
+
+The second condition is true only when health is 75 or more and 99 or less.
+
+A health of 100 fails the <span class="codeSnip">health &lt;= 99</span> test, so only the first message prints.
+
+A health of 90 passes both tests, so only the second message prints.
+
+Any number of conditions can be combined this way.
+
+<hr class="dividerExample" />
+
+#### Example: Health Warning System
+
+<hr class="dividerExample" />
+
+This program deals damage to the player and then reports the health range.
+
+```csharp
+int health = 100;
+
+Console.WriteLine("Enter amount of damage to deal");
+
+int damage = int.Parse(Console.ReadLine());
+
+Console.Clear();
+
+Console.WriteLine("Original Health: {0}", health);
+
+Console.WriteLine("We are dealing: {0} damage", damage);
+
+//health = health - damage;
+
+health -= damage;
+
+Console.WriteLine("we have {0} health left", health);
+
+//WARNING SYSTEM
+Console.WriteLine("****WARNING SYSTEM****");
+
+if (health == 100)
+{
+    Console.WriteLine("You have full health!");
+}
+
+if (health >= 75 && health <= 99)
+{
+    Console.WriteLine("You are almost at full health");
+}
+
+if (health >= 50 && health <= 74)
+{
+    Console.WriteLine("You are at medium health");
+}
+
+if (health >= 25 && health <= 49)
+{
+    Console.WriteLine("Your health is low");
+}
+
+if (health >= 1 && health <= 24)
+{
+    Console.WriteLine("Your health is critical");
+}
+
+if (health <= 0)
+{
+    Console.WriteLine("You are dead");
+}
+
+Console.ReadLine();
+```
+
+<span class="codeSnip">Console.Clear()</span> runs after the damage is read, so the console shows only the lines printed after it.
+
+The commented line and the line below it do the same thing, since each subtracts the damage from the health.
+
+The shorthand also works with the other math operators, such as multiplication and addition.
+
+<div class="xrefBox">
+  <span class="emphasis">See:</span>
+  <a href="/languages/c-family/c-sharp/basics/core-concepts/operators" target="_blank" rel="noopener noreferrer">
+    C# → Basics → Core Concepts → Operators (Compound Assignment Operators)
+  </a>
+</div>
+
+With a damage of 10, the console shows:
+
+```shell
+Original Health: 100
+We are dealing: 10 damage
+we have 90 health left
+****WARNING SYSTEM****
+You are almost at full health
+```
+
+The warning printed depends on the damage entered:
+
+<table class="notesTable">
+  <thead>
+    <tr class="tableHeader">
+      <th class="tableCellHeader">Damage Entered</th>
+      <th class="tableCellHeader">Message Printed</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="tableRow">
+      <td class="tableCell"><span class="codeSnip">0</span></td>
+      <td class="tableCell">You have full health!</td>
+    </tr>
+    <tr class="tableRow">
+      <td class="tableCell"><span class="codeSnip">10</span></td>
+      <td class="tableCell">You are almost at full health</td>
+    </tr>
+    <tr class="tableRow">
+      <td class="tableCell"><span class="codeSnip">50</span></td>
+      <td class="tableCell">You are at medium health</td>
+    </tr>
+    <tr class="tableRow">
+      <td class="tableCell"><span class="codeSnip">75</span></td>
+      <td class="tableCell">Your health is low</td>
+    </tr>
+    <tr class="tableRow">
+      <td class="tableCell"><span class="codeSnip">95</span></td>
+      <td class="tableCell">Your health is critical</td>
+    </tr>
+    <tr class="tableRow">
+      <td class="tableCell"><span class="codeSnip">100</span></td>
+      <td class="tableCell">You are dead</td>
+    </tr>
+  </tbody>
+</table>
+
+Each range has a lower and an upper limit, so the ranges do not overlap and only one message prints.
+
+<hr class="dividerSection" />
+
 ## Nested If Statements
 
 <hr class="dividerSection" />
@@ -518,6 +725,47 @@ if (score >= 90) {
 }
 ```
 
+<hr class="dividerExample" />
+
+#### Example: Else If Chain for the Warning System
+
+<hr class="dividerExample" />
+
+The health warning system can be written as an else if chain.
+
+```csharp
+if (health == 100)
+{
+    Console.WriteLine("You have full health!");
+}
+else if (health >= 75 && health <= 99)
+{
+    Console.WriteLine("You are almost at full health");
+}
+else if (health >= 50 && health <= 74)
+{
+    Console.WriteLine("You are at medium health");
+}
+else if (health >= 25 && health <= 49)
+{
+    Console.WriteLine("Your health is low");
+}
+else if (health >= 1 && health <= 24)
+{
+    Console.WriteLine("Your health is critical");
+}
+else if (health <= 0)
+{
+    Console.WriteLine("You are dead");
+}
+```
+
+The output is the same as with separate if statements.
+
+With a health of 100, the first condition is true, so the other five conditions are never checked.
+
+Skipping them is safe, because each of them can only be true when the first one is false.
+
 <hr class="dividerSection" />
 
 ## Multiple If Statements
@@ -575,11 +823,7 @@ The typed text must match exactly, including capital letters, so typing attack i
 
 The final <span class="codeSnip">Console.ReadLine()</span> pauses the program so the output stays on screen until Enter is pressed.
 
-Separate if statements are different from an else if chain.
-
-In an else if chain, once one condition is true the rest are skipped.
-
-With separate if statements, every condition is still checked, so if more than one is true, more than one block runs.  
+Unlike an else if chain, separate if statements are all checked, so if more than one condition is true, more than one block runs.
 
 <hr class="dividerSection" />
 

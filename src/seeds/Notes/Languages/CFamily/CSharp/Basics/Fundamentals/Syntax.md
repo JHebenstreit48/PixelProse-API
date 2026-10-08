@@ -2,6 +2,10 @@
 
 <hr class="dividerSection" />
 
+## The Rules Behind C# Code
+
+<hr class="dividerSection" />
+
 C# syntax is structured and consistent, making it readable and developer-friendly.
 
 This section introduces core rules and common constructs used to build programs in a clear and maintainable way.
@@ -191,7 +195,14 @@ int x = 5;
 
 In team projects, good commenting improves collaboration and long-term maintainability.
 
-IDE tools like Visual Studio also allow you to select multiple lines and comment them all out at once using a keyboard shortcut, covered in <span class="emphasis">Tools → Visual Studio</span>.
+IDE tools like Visual Studio also allow you to select multiple lines and comment them all out at once using a keyboard shortcut.
+
+<div class="xrefBox">
+  <span class="emphasis">See:</span>
+  <a href="/tools-and-testing/tools/visual-studio/advanced/workflow-and-shortcuts/commenting-shortcuts" target="_blank" rel="noopener noreferrer">
+    Visual Studio → Advanced → Workflow & Shortcuts → Commenting Shortcuts
+  </a>
+</div>
 
 <hr class="dividerSection" />
 
@@ -413,6 +424,77 @@ Correcting the second placeholder to <span class="codeSnip">{1}</span> fixes the
 ```shell
 Hello my name is Joe and I am 30 years old
 ```
+
+<hr class="dividerSection" />
+
+## String Interpolation
+
+<hr class="dividerSection" />
+
+<span class="emphasis">String interpolation</span> is another way to insert variable values into a string, and it was added in <span class="secondEmphasis">C# 6</span>.
+
+Placing a <span class="codeSnip">$</span> directly before the opening quote lets <span class="emphasis">variable names</span> be written inside curly braces in the string.
+
+When the program runs, each <span class="emphasis">placeholder</span> is replaced with the <span class="secondEmphasis">value</span> of that variable.
+
+```csharp
+Console.WriteLine($"Hello my name is {name} and I am {age} years old");
+```
+
+This produces the output:
+
+```shell
+Hello my name is Joe and I am 30 years old
+```
+
+Unlike <span class="emphasis">composite formatting</span>, the variable names go directly inside the braces, so there are no <span class="secondEmphasis">index numbers</span> to match up, and a mismatched index such as two <span class="codeSnip">{0}</span> placeholders cannot happen.
+
+The braces can also hold a short expression, such as <span class="codeSnip">{age + 1}</span>, which inserts the result.
+
+In Visual Studio, the text inside the braces changes color, which shows it is being read as <span class="secondEmphasis">code</span> rather than text.
+
+<hr class="dividerExample" />
+
+#### Example: Forgetting the $
+
+<hr class="dividerExample" />
+
+Without the <span class="codeSnip">$</span>, the curly braces are treated as <span class="emphasis">plain text</span>.
+
+```csharp
+Console.WriteLine("Hello my name is {name}");
+```
+
+This produces the output:
+
+```shell
+Hello my name is {name}
+```
+
+Each string needs its <span class="emphasis">own</span> <span class="codeSnip">$</span>, so a <span class="codeSnip">$</span> on one line does not carry over to the next.
+
+<hr class="dividerExample" />
+
+#### Example: Interpolation in C# vs Template Literals in JavaScript
+
+<hr class="dividerExample" />
+
+JavaScript has the same idea, called <span class="emphasis">template literals</span>.
+
+```csharp
+Console.WriteLine($"Hello {name}");
+```
+
+```js
+console.log(`Hello ${name}`);
+```
+
+<div class="centeredBullet">
+  <ul class="diamondBullets fullWidthBullet">
+    <li>In <span class="emphasis">C#</span>, one <span class="codeSnip">$</span> goes before the opening quote, and each placeholder is plain <span class="codeSnip">{}</span>.</li>
+    <li>In <span class="emphasis">JavaScript</span>, the string uses <span class="secondEmphasis">backticks</span>, and each placeholder has its own <span class="codeSnip">$</span>, written as <span class="codeSnip">${}</span>.</li>
+  </ul>
+</div>
 
 <hr class="dividerSection" />
 

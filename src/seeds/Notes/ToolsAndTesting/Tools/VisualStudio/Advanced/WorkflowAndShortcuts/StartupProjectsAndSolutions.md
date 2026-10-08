@@ -31,7 +31,7 @@ There are two ways to change it, and both have the same effect:
 
 A whole project is chosen, not a single line of code.
 
-After the change, Start runs the main method of that project.
+After the change, Start runs the <span class="codeSnip">Main</span> method of that project.
 
 <div class="xrefBox">
   <span class="emphasis">See:</span>

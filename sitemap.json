@@ -60,11 +60,6 @@
     "category": "Languages/CFamily/CSharp/Basics/CoreConcepts"
   },
   {
-    "path": "Languages/CFamily/CSharp/Tools/IDEs/VisualStudio",
-    "title": "VisualStudio",
-    "category": "Languages/CFamily/CSharp/Tools/IDEs"
-  },
-  {
     "path": "Languages/CFamily/CSharp/Basics/Fundamentals/Introduction",
     "title": "Introduction",
     "category": "Languages/CFamily/CSharp/Basics/Fundamentals"
@@ -100,16 +95,6 @@
     "category": "ToolsAndTesting/Tools/VisualStudio/Advanced/WorkflowAndShortcuts"
   },
   {
-    "path": "ToolsAndTesting/Tools/VisualStudio/Basics/Fundamentals/CreatingAndRunning",
-    "title": "CreatingAndRunning",
-    "category": "ToolsAndTesting/Tools/VisualStudio/Basics/Fundamentals"
-  },
-  {
-    "path": "ToolsAndTesting/Tools/VisualStudio/Basics/Fundamentals/SolutionExplorer",
-    "title": "SolutionExplorer",
-    "category": "ToolsAndTesting/Tools/VisualStudio/Basics/Fundamentals"
-  },
-  {
     "path": "ToolsAndTesting/Tools/VisualStudio/Basics/EditorFeatures/ErrorListAndIndicators",
     "title": "ErrorListAndIndicators",
     "category": "ToolsAndTesting/Tools/VisualStudio/Basics/EditorFeatures"
@@ -118,5 +103,15 @@
     "path": "ToolsAndTesting/Tools/VisualStudio/Basics/EditorFeatures/Intellisense",
     "title": "Intellisense",
     "category": "ToolsAndTesting/Tools/VisualStudio/Basics/EditorFeatures"
+  },
+  {
+    "path": "ToolsAndTesting/Tools/VisualStudio/Basics/Fundamentals/CreatingAndRunning",
+    "title": "CreatingAndRunning",
+    "category": "ToolsAndTesting/Tools/VisualStudio/Basics/Fundamentals"
+  },
+  {
+    "path": "ToolsAndTesting/Tools/VisualStudio/Basics/Fundamentals/SolutionExplorer",
+    "title": "SolutionExplorer",
+    "category": "ToolsAndTesting/Tools/VisualStudio/Basics/Fundamentals"
   }
 ]

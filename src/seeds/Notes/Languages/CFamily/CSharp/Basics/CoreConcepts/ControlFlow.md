@@ -515,6 +515,106 @@ Each range has a lower and an upper limit, so the ranges do not overlap and only
 
 <hr class="dividerSection" />
 
+## Checking Whether Either Condition Is True
+
+<hr class="dividerSection" />
+
+The <span class="codeSnip">||</span> operator means <span class="emphasis">or</span>, so the combined condition is true when <span class="emphasis">at least one</span> side is true.
+
+With <span class="codeSnip">&amp;&amp;</span>, <span class="emphasis">every</span> condition must be true for the block to run.
+
+With <span class="codeSnip">||</span>, only <span class="secondEmphasis">one</span> of the conditions needs to be true.
+
+<div class="xrefBox">
+  <span class="emphasis">See:</span>
+  <a href="/languages/c-family/c-sharp/basics/core-concepts/operators" target="_blank" rel="noopener noreferrer">
+    C# → Basics → Core Concepts → Operators (Logical Operators)
+  </a>
+</div>
+
+<hr class="dividerExample" />
+
+#### Example: Keys and Doors
+
+<hr class="dividerExample" />
+
+A player can hold a <span class="emphasis">red</span>, <span class="emphasis">blue</span>, and <span class="emphasis">green</span> key, and each door checks for the keys it needs.
+
+```csharp
+bool redKey = false;
+bool blueKey = true;
+bool greenKey = false;
+
+if (redKey)
+{
+    Console.WriteLine("You can enter the red door!");
+}
+
+if (blueKey)
+{
+    Console.WriteLine("You can enter the blue door!");
+}
+
+if (greenKey)
+{
+    Console.WriteLine("You can enter the green door!");
+}
+
+if (blueKey && redKey && greenKey)
+{
+    Console.WriteLine("You can enter the rainbow door!");
+}
+
+if (redKey || blueKey || greenKey)
+{
+    Console.WriteLine("You can enter the universal door!");
+}
+```
+
+With only the blue key, this produces the output:
+
+```shell
+You can enter the blue door!
+You can enter the universal door!
+```
+
+The <span class="emphasis">rainbow door</span> uses <span class="codeSnip">&amp;&amp;</span>, so it needs <span class="secondEmphasis">all three</span> keys, and even two out of three is not enough.
+
+The <span class="emphasis">universal door</span> uses <span class="codeSnip">||</span>, so <span class="secondEmphasis">any one</span> key opens it.
+
+Each door uses its own <span class="emphasis">if statement</span>, because every door needs to be checked, not just the first one that matches.
+
+The doors that open depend on the keys held:
+
+<table class="notesTable">
+  <thead>
+    <tr class="tableHeader">
+      <th class="tableCellHeader">Keys Held</th>
+      <th class="tableCellHeader">Doors Opened</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="tableRow">
+      <td class="tableCell">None</td>
+      <td class="tableCell">None, nothing is printed</td>
+    </tr>
+    <tr class="tableRow">
+      <td class="tableCell">Blue</td>
+      <td class="tableCell">Blue, Universal</td>
+    </tr>
+    <tr class="tableRow">
+      <td class="tableCell">Blue and Green</td>
+      <td class="tableCell">Blue, Green, Universal</td>
+    </tr>
+    <tr class="tableRow">
+      <td class="tableCell">Red, Blue, and Green</td>
+      <td class="tableCell">Red, Blue, Green, Rainbow, Universal</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr class="dividerSection" />
+
 ## Nested If Statements
 
 <hr class="dividerSection" />
@@ -616,7 +716,7 @@ if (isActive)
 
 <hr class="dividerExample" />
 
-```javascript
+```js
 let isActive = true;
 if (isActive) {
     console.log("Active!");
@@ -670,7 +770,7 @@ else
 
 <hr class="dividerExample" />
 
-```javascript
+```js
 let hasKey = false;
 
 if (hasKey) {
@@ -713,7 +813,7 @@ else
 
 <hr class="dividerExample" />
 
-```javascript
+```js
 let score = 75;
 
 if (score >= 90) {
@@ -827,6 +927,197 @@ Unlike an else if chain, separate if statements are all checked, so if more than
 
 <hr class="dividerSection" />
 
+## Generating a Random Number
+
+<hr class="dividerSection" />
+
+A program can generate a <span class="emphasis">random number</span> using the <span class="codeSnip">Random</span> class.
+
+```csharp
+Random random = new Random();
+
+int number = random.Next(1, 11);
+
+Console.WriteLine(number);
+```
+
+The first line creates a <span class="emphasis">Random object</span> named <span class="codeSnip">random</span>, which is used to generate the numbers.
+
+The name <span class="codeSnip">random</span> is just an <span class="secondEmphasis">identifier</span>, so any valid variable name works, and the example below uses <span class="codeSnip">rnd</span>.
+
+How objects are created with <span class="codeSnip">new</span> is covered with classes and objects, so for now this line can be used as is.
+
+<div class="xrefBox">
+  <span class="emphasis">See:</span>
+  <a href="/languages/c-family/c-sharp/basics/core-concepts/oop" target="_blank" rel="noopener noreferrer">
+    C# → Basics → Core Concepts → OOP in C#
+  </a>
+</div>
+
+The <span class="codeSnip">Next</span> method takes a <span class="emphasis">minimum value</span> and a <span class="emphasis">maximum value</span>.
+
+The minimum value is <span class="secondEmphasis">inclusive</span>, so it can be generated.
+
+The maximum value is <span class="secondEmphasis">exclusive</span>, so it is never generated.
+
+To generate a number from 1 to 10, the maximum must be <span class="codeSnip">11</span>.
+
+Each run prints a different number, for example 1 the first time, then 9, then 6.
+
+<hr class="dividerSection" />
+
+## Example Program: Even or Odd Checker
+
+<hr class="dividerSection" />
+
+This program generates <span class="emphasis">two random numbers</span> from 1 to 10, prints them, and tells the user whether each one is <span class="emphasis">even</span> or <span class="emphasis">odd</span>.
+
+It prints one of these results:
+
+<div class="centeredBullet">
+  <ul class="diamondBullets fullWidthBullet">
+    <li>Both numbers are even</li>
+    <li>Both numbers are odd</li>
+    <li>The first number is even and the second number is odd</li>
+    <li>The first number is odd and the second number is even</li>
+  </ul>
+</div>
+
+Checking for even numbers is normally done with the <span class="emphasis">modulus operator</span> <span class="codeSnip">%</span>.
+
+This program avoids it on purpose and checks each possible value with <span class="codeSnip">||</span> instead, to practice combining conditions.
+
+<div class="xrefBox">
+  <span class="emphasis">See:</span>
+  <a href="/languages/c-family/c-sharp/basics/core-concepts/operators" target="_blank" rel="noopener noreferrer">
+    C# → Basics → Core Concepts → Operators
+  </a>
+</div>
+
+```csharp
+Random rnd = new Random();
+
+int first = rnd.Next(1, 11);
+int second = rnd.Next(1, 11);
+
+Console.WriteLine($"The first random number is {first}");
+Console.WriteLine($"The second random number is {second}");
+
+if ((first == 2 || first == 4 || first == 6 || first == 8 || first == 10) && (second == 2 || second == 4 || second == 6 || second == 8 || second == 10))
+{
+    Console.WriteLine("Both numbers are even");
+}
+else if ((first == 1 || first == 3 || first == 5 || first == 7 || first == 9) && (second == 1 || second == 3 || second == 5 || second == 7 || second == 9))
+{
+    Console.WriteLine("Both numbers are odd");
+}
+else
+{
+    if (first == 2 || first == 4 || first == 6 || first == 8 || first == 10)
+    {
+        Console.WriteLine("The first number is even");
+    }
+    else
+    {
+        Console.WriteLine("The first number is odd");
+    }
+
+    if (second == 2 || second == 4 || second == 6 || second == 8 || second == 10)
+    {
+        Console.WriteLine("The second number is even");
+    }
+    else
+    {
+        Console.WriteLine("The second number is odd");
+    }
+}
+```
+
+The <span class="codeSnip">$</span> in front of the string turns on <span class="emphasis">string interpolation</span>, which inserts the value of the variable inside the curly braces.
+
+Without the <span class="codeSnip">$</span>, the curly braces are printed as plain text, so the output would read The first random number is {first}.
+
+<div class="xrefBox">
+  <span class="emphasis">See:</span>
+  <a href="/languages/c-family/c-sharp/basics/fundamentals/syntax-and-structure" target="_blank" rel="noopener noreferrer">
+    C# → Basics → Fundamentals → Syntax &amp; Structure (String Interpolation)
+  </a>
+</div>
+
+Each <span class="codeSnip">||</span> chain is wrapped in its own <span class="emphasis">parentheses</span>, so it is evaluated as <span class="secondEmphasis">one condition</span> before the <span class="codeSnip">&amp;&amp;</span> joins the two chains.
+
+Without them, <span class="codeSnip">&amp;&amp;</span> is evaluated before <span class="codeSnip">||</span>, and the condition would not check what was intended.
+
+The results for some example numbers:
+
+<table class="notesTable">
+  <thead>
+    <tr class="tableHeader">
+      <th class="tableCellHeader">Numbers Generated</th>
+      <th class="tableCellHeader">Message Printed</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="tableRow">
+      <td class="tableCell"><span class="codeSnip">2</span> and <span class="codeSnip">4</span></td>
+      <td class="tableCell">Both numbers are even</td>
+    </tr>
+    <tr class="tableRow">
+      <td class="tableCell"><span class="codeSnip">3</span> and <span class="codeSnip">7</span></td>
+      <td class="tableCell">Both numbers are odd</td>
+    </tr>
+    <tr class="tableRow">
+      <td class="tableCell"><span class="codeSnip">2</span> and <span class="codeSnip">7</span></td>
+      <td class="tableCell">The first number is even, The second number is odd</td>
+    </tr>
+    <tr class="tableRow">
+      <td class="tableCell"><span class="codeSnip">5</span> and <span class="codeSnip">4</span></td>
+      <td class="tableCell">The first number is odd, The second number is even</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr class="dividerExample" />
+
+#### Example: Why the Individual Checks Sit Inside the Else
+
+<hr class="dividerExample" />
+
+If the individual checks were placed after the else if chain instead of inside the final else, they would always run.
+
+With the numbers 2 and 4, the program would then print:
+
+```shell
+Both numbers are even
+The first number is even
+The second number is even
+```
+
+The last two lines repeat what the first line already said.
+
+Placing the individual checks inside the else means they only run when the numbers are <span class="emphasis">not</span> both even and <span class="emphasis">not</span> both odd.
+
+<hr class="dividerExample" />
+
+#### Example: Testing with Fixed Numbers
+
+<hr class="dividerExample" />
+
+Random numbers make it hard to test every case, because the needed combination may take many runs to appear.
+
+Replacing the random values with <span class="emphasis">fixed values</span> makes each case easy to test.
+
+```csharp
+int first = 2;
+int second = 4;
+```
+
+Changing the two values to 3 and 7, 2 and 7, or 5 and 4 tests each of the other results.
+
+Once every case prints the correct message, the random values can be put back.
+
+<hr class="dividerSection" />
+
 ## Key Points to Remember
 
 <hr class="dividerSection" />
@@ -837,6 +1128,7 @@ Unlike an else if chain, separate if statements are all checked, so if more than
     <li>The <span class="emphasis">else</span> block is optional but recommended when a default action is needed.</li>
     <li>Always use curly braces <span class="codeSnip">{}</span> even for single-line statements. This improves code readability and prevents logical errors.</li>
     <li>Too many nested <span class="emphasis">if...else if</span> chains can make code hard to read. For complex conditions, consider using switch statements or refactoring logic.</li>
+    <li><span class="codeSnip">&amp;&amp;</span> requires <span class="emphasis">every</span> condition to be true, while <span class="codeSnip">||</span> requires <span class="secondEmphasis">at least one</span>.</li>
   </ul>
 </div>
 

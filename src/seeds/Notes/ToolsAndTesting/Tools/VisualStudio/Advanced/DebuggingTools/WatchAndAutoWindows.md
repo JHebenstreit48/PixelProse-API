@@ -1,4 +1,4 @@
-i# Watching Variables While You Debug
+# Watching Variables While You Debug
 
 <hr class="dividerSection" />
 

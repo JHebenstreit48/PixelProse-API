@@ -15,11 +15,6 @@
     "category": "Languages/Java/Basics/Fundamentals"
   },
   {
-    "path": "Languages/CFamily/CPlusPlus/Basics/Fundamentals/Introduction",
-    "title": "Introduction",
-    "category": "Languages/CFamily/CPlusPlus/Basics/Fundamentals"
-  },
-  {
     "path": "Languages/CFamily/C/Basics/Fundamentals/History",
     "title": "History",
     "category": "Languages/CFamily/C/Basics/Fundamentals"
@@ -83,6 +78,11 @@
     "path": "Languages/CFamily/CSharp/Basics/Fundamentals/VariablesAndDataTypes",
     "title": "VariablesAndDataTypes",
     "category": "Languages/CFamily/CSharp/Basics/Fundamentals"
+  },
+  {
+    "path": "Languages/CFamily/CPlusPlus/Basics/Fundamentals/Introduction",
+    "title": "Introduction",
+    "category": "Languages/CFamily/CPlusPlus/Basics/Fundamentals"
   },
   {
     "path": "ToolsAndTesting/Tools/VisualStudio/Advanced/DebuggingTools/BreakpointsAndStepDebugging",

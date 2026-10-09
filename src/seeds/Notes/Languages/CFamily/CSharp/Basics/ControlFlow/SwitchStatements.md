@@ -116,9 +116,6 @@ switch (animal)
     case "Horse":
         Console.WriteLine("The horse says neigh!");
         break;
-    default:
-        Console.WriteLine("Unknown animal");
-        break;
 }
 ```
 
@@ -130,6 +127,8 @@ The chicken says cluck!
 
 Instead of writing <span class="codeSnip">animal == "Duck"</span>, each case lists only the <span class="emphasis">value</span>, such as <span class="codeSnip">"Duck"</span>.
 
+This switch has no default case, so if <span class="codeSnip">animal</span> held a value that matches no case, such as <span class="codeSnip">"Cat"</span>, nothing would be printed.
+
 <hr class="dividerSection" />
 
 ## Why Every Case Needs a Break
@@ -140,9 +139,51 @@ Without a <span class="codeSnip">break</span>, the program would continue into t
 
 C# does not allow fall-through from a case that contains code, so a missing <span class="codeSnip">break</span> causes an error.
 
-Visual Studio reports it as <span class="codeSnip">Control cannot fall through from one case label to another</span>.
-
 This rule prevents the mistake of one case accidentally running the code of the case below it.
+
+<hr class="dividerExample" />
+
+#### Example: A Missing Break
+
+<hr class="dividerExample" />
+
+This switch is missing the <span class="codeSnip">break</span> after the duck case.
+
+```csharp
+switch (animal)
+{
+    case "Duck":
+        Console.WriteLine("The duck says quack!");
+    default:
+        break;
+}
+```
+
+The code does not compile, and the <span class="emphasis">Error List</span> shows:
+
+```shell
+CS0163 Control cannot fall through from one case label ('case "Duck":') to another
+```
+
+Adding <span class="codeSnip">break</span> at the end of the duck case fixes the error.
+
+```csharp
+switch (animal)
+{
+    case "Duck":
+        Console.WriteLine("The duck says quack!");
+        break;
+    default:
+        break;
+}
+```
+
+<div class="xrefBox">
+  <span class="emphasis">See:</span>
+  <a href="/tools-and-testing/tools/visual-studio/basics/editor-features/error-list" target="_blank" rel="noopener noreferrer">
+    Visual Studio → Basics → Editor Features → Error List & Error Indicators
+  </a>
+</div>
 
 <hr class="dividerExample" />
 
@@ -191,13 +232,15 @@ In JavaScript, this prints both messages, because the duck case has no <span cla
   </a>
 </div>
 
-A switch can also perform better when there are many cases.
-
 An else if chain checks each condition <span class="emphasis">in order</span>, so a match near the bottom has to wait for every check above it.
 
-With many cases, the compiler can build a <span class="emphasis">lookup</span>, such as a <span class="secondEmphasis">hash table</span> for strings, so the program jumps straight to the matching case.
+In the else if version, Duck and Cow are checked before Chicken is reached, and a match on the last value, Horse, would have to wait for all four checks above it.
 
-Stepping through both versions in the debugger shows this, because the else if chain stops on each condition while the switch jumps directly to the matching case.
+Stepping through the switch in the debugger, the program moves straight from the <span class="codeSnip">switch</span> line to the matching case, without stopping on the cases above it.
+
+Behind the scenes, the compiler decides how to find the matching case.
+
+With many cases, it can build a <span class="emphasis">lookup</span>, such as a <span class="secondEmphasis">hash table</span> for strings, so the match is found without checking every case in order.
 
 The difference is too small to notice in a small program, so readability is usually what decides between the two.
 

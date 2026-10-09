@@ -377,6 +377,37 @@ number += 5;
 
 <hr class="dividerSection" />
 
+## Increment and Decrement Operators
+
+<hr class="dividerSection" />
+
+The <span class="emphasis">increment operator</span> <span class="codeSnip">++</span> increases a variable by <span class="secondEmphasis">1</span>.
+
+The <span class="emphasis">decrement operator</span> <span class="codeSnip">--</span> decreases a variable by <span class="secondEmphasis">1</span>.
+
+```csharp
+int number = 10;
+
+number--;               // number is now 9
+number = number - 1;    // number is now 8
+
+number++;               // number is now 9
+number = number + 1;    // number is now 10
+```
+
+<span class="codeSnip">number--</span> does the same thing as <span class="codeSnip">number = number - 1</span>, and <span class="codeSnip">number++</span> does the same thing as <span class="codeSnip">number = number + 1</span>.
+
+These operators are used most often in loops, to count up or down one step at a time.
+
+<div class="xrefBox">
+  <span class="emphasis">See:</span>
+  <a href="/languages/c-family/c-sharp/basics/control-flow/loops" target="_blank" rel="noopener noreferrer">
+    C# → Basics → Control Flow → Loops (Counting with a For Loop)
+  </a>
+</div>
+
+<hr class="dividerSection" />
+
 ## Ternary Operator (?:)
 
 <hr class="dividerSection" />

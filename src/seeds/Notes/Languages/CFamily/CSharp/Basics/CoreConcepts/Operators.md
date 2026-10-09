@@ -431,7 +431,7 @@ From simple assignment and arithmetic to comparisons and complex logical combina
   </div>
 
   <div class="xrefItem">
-    <a class="xrefBtn" href="/languages/c-family/c-sharp/basics/core-concepts/control-flow">Next →</a>
-    <div class="xrefTitle">C# - Basics - Core Concepts - Control Flow</div>
+    <a class="xrefBtn" href="/languages/c-family/c-sharp/basics/control-flow/conditions-and-comparisons">Next →</a>
+    <div class="xrefTitle">Section: C# - Basics - Control Flow - Conditions & Comparisons</div>
   </div>
 </div>

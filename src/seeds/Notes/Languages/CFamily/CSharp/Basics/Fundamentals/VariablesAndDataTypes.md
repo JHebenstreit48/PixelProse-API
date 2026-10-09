@@ -8,9 +8,9 @@
 
 <span class="emphasis">Variables</span> are <span class="emphasis">containers</span> for <span class="emphasis">storing</span> <span class="secondEmphasis">data values</span>.
 
-A variable stores a value, it has a type, it does not store a type itself.
+A variable stores a value and has a type, but it does not store the type itself.
 
-An <span class="emphasis">identifier</span> is used when we need to access this memory later in the game or program.
+Each variable has a name, called an <span class="emphasis">identifier</span>, which is used to access its value later in the game or program.
 
 <hr class="dividerSection" />
 
@@ -20,9 +20,7 @@ An <span class="emphasis">identifier</span> is used when we need to access this 
 
 To create a variable in C#, you write the data type first.
 
-After the data type, you need to create an identifier.
-
-An <span class="emphasis">identifier</span> is the unique name that identifies a variable, so it can be referenced later in the program by that name.
+After the data type comes the <span class="emphasis">identifier</span>, the name the variable will be referenced by.
 
 Once the variable is declared, you can assign data to it.
 
@@ -122,7 +120,24 @@ One line takes up less space, but a long line can be harder to read, so separate
 
 <hr class="dividerSection" />
 
-An identifier cannot be a <span class="emphasis">keyword</span>.
+Identifiers must follow a few <span class="emphasis">rules</span>, or the code will not compile.
+
+<div class="centeredBullet">
+  <ul class="diamondBullets fullWidthBullet">
+    <li>They can contain <span class="emphasis">letters</span>, <span class="emphasis">digits</span>, and <span class="emphasis">underscores</span>.</li>
+    <li>They cannot contain <span class="secondEmphasis">spaces</span>.</li>
+    <li>They cannot <span class="secondEmphasis">start with a digit</span>.</li>
+  </ul>
+</div>
+
+```csharp
+int playerHealth;    // Valid
+int player2Health;   // Valid, digits are allowed after the first character
+int 2ndPlayer;       // Error: cannot start with a digit
+string first name;   // Error: spaces are not allowed
+```
+
+An identifier also cannot be a <span class="emphasis">keyword</span>.
 
 A keyword is a word that already has a special meaning in C#, such as <span class="codeSnip">class</span>, <span class="codeSnip">int</span>, and <span class="codeSnip">string</span>.
 
@@ -132,6 +147,31 @@ Using a keyword as a variable name causes an error, so a different name must be 
 string class;    // Error: class is a keyword
 string myClass;  // Valid
 ```
+
+<hr class="dividerExample" />
+
+#### Example: camelCase
+
+<hr class="dividerExample" />
+
+Variable names in C# are normally written in <span class="emphasis">camelCase</span>, as in the Separate Lines vs One Line example above.
+
+The first word starts with a <span class="secondEmphasis">lowercase</span> letter, and every word after it starts with a <span class="secondEmphasis">capital</span> letter, with no spaces in between.
+
+<span class="codeSnip">firstName</span>, <span class="codeSnip">playerHealth</span>, <span class="codeSnip">maxAmmoCount</span>
+
+camelCase is a <span class="emphasis">convention</span>, not a rule, so other styles still compile, but following it makes names easier to read and keeps code consistent.
+
+A name should also describe what it stores, so <span class="codeSnip">playerHealth</span> is clearer than <span class="codeSnip">ph</span> or <span class="codeSnip">x</span>.
+
+Capitalization always matters in a name, because C# is case-sensitive.
+
+<div class="xrefBox">
+  <span class="emphasis">See:</span>
+  <a href="/languages/c-family/c-sharp/basics/fundamentals/syntax-and-structure" target="_blank" rel="noopener noreferrer">
+    C# → Basics → Fundamentals → Syntax & Structure (Case Sensitivity)
+  </a>
+</div>
 
 <hr class="dividerSection" />
 
@@ -708,6 +748,47 @@ The result of first * second is 40
 ```
 
 This example was run with 10 and 4.
+
+<hr class="dividerSection" />
+
+## Generating a Random Number
+
+<hr class="dividerSection" />
+
+Besides assigning a value directly or reading it from the user, a variable can be given a <span class="emphasis">random number</span> using the <span class="codeSnip">Random</span> class.
+
+In games, random numbers are used for things like dice rolls, damage ranges, and loot drops.
+
+```csharp
+Random random = new Random();
+
+int number = random.Next(1, 11);
+
+Console.WriteLine(number);
+```
+
+The first line creates a <span class="emphasis">Random object</span> named <span class="codeSnip">random</span>, which is used to generate the numbers.
+
+The name <span class="codeSnip">random</span> is just an <span class="secondEmphasis">identifier</span>, so any valid variable name works, such as <span class="codeSnip">rnd</span>.
+
+How objects are created with <span class="codeSnip">new</span> is covered with classes and objects, so for now this line can be used as is.
+
+<div class="xrefBox">
+  <span class="emphasis">See:</span>
+  <a href="/languages/c-family/c-sharp/basics/core-concepts/oop" target="_blank" rel="noopener noreferrer">
+    C# → Basics → Core Concepts → OOP in C#
+  </a>
+</div>
+
+The <span class="codeSnip">Next</span> method takes a <span class="emphasis">minimum value</span> and a <span class="emphasis">maximum value</span>, and the number it returns is stored in the <span class="codeSnip">int</span> variable.
+
+The minimum value is <span class="secondEmphasis">inclusive</span>, so it can be generated.
+
+The maximum value is <span class="secondEmphasis">exclusive</span>, so it is never generated.
+
+To generate a number from 1 to 10, the maximum must be <span class="codeSnip">11</span>.
+
+Each run prints a different number, for example 1 the first time, then 9, then 6.
 
 <hr class="dividerSection" />
 

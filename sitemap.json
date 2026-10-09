@@ -15,6 +15,11 @@
     "category": "Languages/Java/Basics/Fundamentals"
   },
   {
+    "path": "Languages/CFamily/CPlusPlus/Basics/Fundamentals/Introduction",
+    "title": "Introduction",
+    "category": "Languages/CFamily/CPlusPlus/Basics/Fundamentals"
+  },
+  {
     "path": "Languages/CFamily/C/Basics/Fundamentals/History",
     "title": "History",
     "category": "Languages/CFamily/C/Basics/Fundamentals"
@@ -30,9 +35,19 @@
     "category": "Languages/CFamily/C/Basics/Fundamentals"
   },
   {
-    "path": "Languages/CFamily/CPlusPlus/Basics/Fundamentals/Introduction",
-    "title": "Introduction",
-    "category": "Languages/CFamily/CPlusPlus/Basics/Fundamentals"
+    "path": "Languages/CFamily/CSharp/Basics/ControlFlow/ConditionsAndComparisons",
+    "title": "ConditionsAndComparisons",
+    "category": "Languages/CFamily/CSharp/Basics/ControlFlow"
+  },
+  {
+    "path": "Languages/CFamily/CSharp/Basics/ControlFlow/IfStatements",
+    "title": "IfStatements",
+    "category": "Languages/CFamily/CSharp/Basics/ControlFlow"
+  },
+  {
+    "path": "Languages/CFamily/CSharp/Basics/ControlFlow/SwitchStatements",
+    "title": "SwitchStatements",
+    "category": "Languages/CFamily/CSharp/Basics/ControlFlow"
   },
   {
     "path": "Languages/CFamily/CSharp/Basics/CoreConcepts/Collections",
@@ -42,11 +57,6 @@
   {
     "path": "Languages/CFamily/CSharp/Basics/CoreConcepts/Console",
     "title": "Console",
-    "category": "Languages/CFamily/CSharp/Basics/CoreConcepts"
-  },
-  {
-    "path": "Languages/CFamily/CSharp/Basics/CoreConcepts/ControlFlow",
-    "title": "ControlFlow",
     "category": "Languages/CFamily/CSharp/Basics/CoreConcepts"
   },
   {

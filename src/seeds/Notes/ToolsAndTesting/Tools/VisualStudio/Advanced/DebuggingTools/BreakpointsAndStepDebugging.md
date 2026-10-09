@@ -119,8 +119,8 @@ The else block is skipped, because the if condition was true.
 
 <div class="xrefBox">
   <span class="emphasis">See:</span>
-  <a href="/languages/c-family/c-sharp/basics/core-concepts/control-flow" target="_blank" rel="noopener noreferrer">
-    C# → Basics → Core Concepts → Control Flow (Else and Else If Statements)
+  <a href="/languages/c-family/c-sharp/basics/control-flow/if-statements" target="_blank" rel="noopener noreferrer">
+    C# → Basics → Control Flow → If Statements (Else and Else If Statements)
   </a>
 </div>
 

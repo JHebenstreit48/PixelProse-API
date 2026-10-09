@@ -2,6 +2,10 @@
 
 <hr class="dividerSection" />
 
+## Working with Operators
+
+<hr class="dividerSection" />
+
 Operators in C# are symbols or keywords that specify operations to be performed on variables and values.
 
 Understanding operators is essential for writing expressions and making decisions in your code.

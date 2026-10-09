@@ -1,4 +1,4 @@
-# What Control Flow Does
+# Making Decisions with If Statements
 
 <hr class="dividerSection" />
 

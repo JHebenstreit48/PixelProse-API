@@ -172,19 +172,19 @@ bool alive = false;
 
 while (alive)
 {
-    Console.WriteLine("The player is alive");
+    Console.WriteLine("The player is alive!");
 }
 
 do
 {
-    Console.WriteLine("The player is alive");
+    Console.WriteLine("The player is alive!");
 } while (alive);
 ```
 
 This produces the output:
 
 ```shell
-The player is alive
+The player is alive!
 ```
 
 The while loop prints nothing, because <span class="codeSnip">alive</span> is false before it starts.
@@ -229,20 +229,20 @@ This program asks for a number to count <span class="emphasis">from</span> and a
 <hr class="dividerSubsection1" />
 
 ```csharp
-Console.WriteLine("Enter the number to count from");
+Console.WriteLine("Enter the number to count from!");
 
 int from = int.Parse(Console.ReadLine());
 
-Console.WriteLine("Enter the number to count to");
+Console.WriteLine("Enter the number to count to!");
 
 int to = int.Parse(Console.ReadLine());
 
-Console.WriteLine("Counting");
+Console.WriteLine("Counting....");
+
+Console.WriteLine(from);
 
 while (from != to)
 {
-    Console.WriteLine(from);
-
     if (from < to)
     {
         from++;
@@ -251,18 +251,48 @@ while (from != to)
     {
         from--;
     }
-}
 
-Console.WriteLine(from);
+    Console.WriteLine(from);
+}
 ```
 
 The loop runs as long as <span class="codeSnip">from</span> and <span class="codeSnip">to</span> are <span class="emphasis">not equal</span>.
 
 If <span class="codeSnip">from</span> is smaller, it counts <span class="secondEmphasis">up</span>, and otherwise it counts <span class="secondEmphasis">down</span>.
 
-The loop stops as soon as <span class="codeSnip">from</span> equals <span class="codeSnip">to</span>, before that last number is printed.
+The starting number is printed once <span class="emphasis">before</span> the loop.
 
-The extra <span class="codeSnip">WriteLine</span> after the loop prints that final number, so counting from 1 to 10 includes the 10.
+Inside the loop, <span class="codeSnip">from</span> is changed <span class="emphasis">first</span> and printed <span class="secondEmphasis">after</span>, so the last number printed is the one that makes <span class="codeSnip">from</span> equal <span class="codeSnip">to</span>.
+
+Counting from 1 to 10 prints every number from 1 to 10, and counting from 10 to 1 prints them in reverse.
+
+<hr class="dividerExample" />
+
+#### Example: Checking the Other Direction First
+
+<hr class="dividerExample" />
+
+The if statement can also check whether <span class="codeSnip">from</span> is <span class="emphasis">larger</span> first, with the two branches swapped.
+
+```csharp
+if (from > to)
+{
+    from--;
+}
+else
+{
+    from++;
+}
+```
+
+This works exactly the same, because each version counts down when <span class="codeSnip">from</span> is larger and up when it is smaller.
+
+<div class="xrefBox">
+  <span class="emphasis">See:</span>
+  <a href="/languages/c-family/c-sharp/basics/control-flow/conditions-and-comparisons" target="_blank" rel="noopener noreferrer">
+    C# → Basics → Control Flow → Conditions & Comparisons (Equivalent Conditions)
+  </a>
+</div>
 
 <hr class="dividerSubsection1" />
 
@@ -272,23 +302,25 @@ The extra <span class="codeSnip">WriteLine</span> after the loop prints that fin
 
 Wrapping the whole program in a <span class="codeSnip">while (true)</span> loop keeps it running until the user chooses to stop.
 
+On its own, the outer loop would keep asking for new numbers forever with no way to stop, so the program also asks whether to try again, and ends the loop with <span class="codeSnip">break</span> if the answer is no.
+
 ```csharp
 while (true)
 {
-    Console.WriteLine("Enter the number to count from");
+    Console.WriteLine("Enter the number to count from!");
 
     int from = int.Parse(Console.ReadLine());
 
-    Console.WriteLine("Enter the number to count to");
+    Console.WriteLine("Enter the number to count to!");
 
     int to = int.Parse(Console.ReadLine());
 
-    Console.WriteLine("Counting");
+    Console.WriteLine("Counting....");
+
+    Console.WriteLine(from);
 
     while (from != to)
     {
-        Console.WriteLine(from);
-
         if (from < to)
         {
             from++;
@@ -297,11 +329,11 @@ while (true)
         {
             from--;
         }
+
+        Console.WriteLine(from);
     }
 
-    Console.WriteLine(from);
-
-    Console.WriteLine("Do you want to try again?");
+    Console.WriteLine("Do you wanna try again? write yes or no");
 
     string answer = Console.ReadLine();
 
@@ -320,7 +352,9 @@ Typing yes clears the console and starts again, and typing anything else ends th
 
 <span class="codeSnip">ToLower()</span> turns every letter in the answer into lowercase before it is compared, so <span class="codeSnip">yes</span>, <span class="codeSnip">Yes</span>, and <span class="codeSnip">YES</span> all match.
 
-Without it, only the exact lowercase <span class="codeSnip">yes</span> would match, because string comparisons are case-sensitive.
+Without it, the check would be <span class="codeSnip">answer == "yes"</span>, and typing <span class="codeSnip">Yes</span> with a capital letter would not match, because string comparisons are case-sensitive.
+
+Since anything that does not match goes to the <span class="codeSnip">else</span>, typing <span class="codeSnip">Yes</span> would close the program instead of starting again.
 
 Typing a letter when a number is expected stops the program, because <span class="codeSnip">int.Parse</span> cannot convert it.
 
@@ -346,6 +380,16 @@ Typing a letter when a number is expected stops the program, because <span class
     <li><span class="codeSnip">ToLower()</span> makes text comparisons ignore capital letters.</li>
   </ul>
 </div>
+
+<hr class="dividerSection" />
+
+## Summary
+
+<hr class="dividerSection" />
+
+A for loop fits a set number of iterations, while a while loop fits repeating until something changes.
+
+A do-while loop is the choice when the code must run once before the condition is checked.
 
 <hr class="dividerSection" />
 

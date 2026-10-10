@@ -30,29 +30,9 @@
     "category": "Languages/CFamily/C/Basics/Fundamentals"
   },
   {
-    "path": "Languages/CFamily/CPlusPlus/Basics/Fundamentals/Introduction",
-    "title": "Introduction",
-    "category": "Languages/CFamily/CPlusPlus/Basics/Fundamentals"
-  },
-  {
-    "path": "Languages/CFamily/CSharp/Basics/ControlFlow/ConditionsAndComparisons",
-    "title": "ConditionsAndComparisons",
-    "category": "Languages/CFamily/CSharp/Basics/ControlFlow"
-  },
-  {
-    "path": "Languages/CFamily/CSharp/Basics/ControlFlow/IfStatements",
-    "title": "IfStatements",
-    "category": "Languages/CFamily/CSharp/Basics/ControlFlow"
-  },
-  {
-    "path": "Languages/CFamily/CSharp/Basics/ControlFlow/Loops",
-    "title": "Loops",
-    "category": "Languages/CFamily/CSharp/Basics/ControlFlow"
-  },
-  {
-    "path": "Languages/CFamily/CSharp/Basics/ControlFlow/SwitchStatements",
-    "title": "SwitchStatements",
-    "category": "Languages/CFamily/CSharp/Basics/ControlFlow"
+    "path": "Languages/CFamily/CSharp/Advanced/ModernFeatures/LINQ",
+    "title": "LINQ",
+    "category": "Languages/CFamily/CSharp/Advanced/ModernFeatures"
   },
   {
     "path": "Languages/CFamily/CSharp/Basics/CoreConcepts/Arrays",
@@ -100,6 +80,31 @@
     "category": "Languages/CFamily/CSharp/Basics/Fundamentals"
   },
   {
+    "path": "Languages/CFamily/CSharp/Basics/ControlFlow/ConditionsAndComparisons",
+    "title": "ConditionsAndComparisons",
+    "category": "Languages/CFamily/CSharp/Basics/ControlFlow"
+  },
+  {
+    "path": "Languages/CFamily/CSharp/Basics/ControlFlow/IfStatements",
+    "title": "IfStatements",
+    "category": "Languages/CFamily/CSharp/Basics/ControlFlow"
+  },
+  {
+    "path": "Languages/CFamily/CSharp/Basics/ControlFlow/Loops",
+    "title": "Loops",
+    "category": "Languages/CFamily/CSharp/Basics/ControlFlow"
+  },
+  {
+    "path": "Languages/CFamily/CSharp/Basics/ControlFlow/SwitchStatements",
+    "title": "SwitchStatements",
+    "category": "Languages/CFamily/CSharp/Basics/ControlFlow"
+  },
+  {
+    "path": "Languages/CFamily/CPlusPlus/Basics/Fundamentals/Introduction",
+    "title": "Introduction",
+    "category": "Languages/CFamily/CPlusPlus/Basics/Fundamentals"
+  },
+  {
     "path": "ToolsAndTesting/Tools/VisualStudio/Advanced/WorkflowAndShortcuts/CommentingShortcuts",
     "title": "CommentingShortcuts",
     "category": "ToolsAndTesting/Tools/VisualStudio/Advanced/WorkflowAndShortcuts"
@@ -120,16 +125,6 @@
     "category": "ToolsAndTesting/Tools/VisualStudio/Advanced/DebuggingTools"
   },
   {
-    "path": "ToolsAndTesting/Tools/VisualStudio/Basics/EditorFeatures/ErrorListAndIndicators",
-    "title": "ErrorListAndIndicators",
-    "category": "ToolsAndTesting/Tools/VisualStudio/Basics/EditorFeatures"
-  },
-  {
-    "path": "ToolsAndTesting/Tools/VisualStudio/Basics/EditorFeatures/Intellisense",
-    "title": "Intellisense",
-    "category": "ToolsAndTesting/Tools/VisualStudio/Basics/EditorFeatures"
-  },
-  {
     "path": "ToolsAndTesting/Tools/VisualStudio/Basics/Fundamentals/CreatingAndRunning",
     "title": "CreatingAndRunning",
     "category": "ToolsAndTesting/Tools/VisualStudio/Basics/Fundamentals"
@@ -138,5 +133,15 @@
     "path": "ToolsAndTesting/Tools/VisualStudio/Basics/Fundamentals/SolutionExplorer",
     "title": "SolutionExplorer",
     "category": "ToolsAndTesting/Tools/VisualStudio/Basics/Fundamentals"
+  },
+  {
+    "path": "ToolsAndTesting/Tools/VisualStudio/Basics/EditorFeatures/ErrorListAndIndicators",
+    "title": "ErrorListAndIndicators",
+    "category": "ToolsAndTesting/Tools/VisualStudio/Basics/EditorFeatures"
+  },
+  {
+    "path": "ToolsAndTesting/Tools/VisualStudio/Basics/EditorFeatures/Intellisense",
+    "title": "Intellisense",
+    "category": "ToolsAndTesting/Tools/VisualStudio/Basics/EditorFeatures"
   }
 ]

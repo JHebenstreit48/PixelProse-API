@@ -185,6 +185,21 @@ for (int i = 1; i <= 10; i++)
 }
 ```
 
+This produces the output:
+
+```shell
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+```
+
 Writing <span class="codeSnip">i &lt; 11</span> instead of <span class="codeSnip">i &lt;= 10</span> gives the same result.
 
 The operator is written <span class="codeSnip">&lt;=</span>, with the less than sign first.
@@ -232,16 +247,16 @@ The loop stops after 1, because when <span class="codeSnip">i</span> reaches 0, 
 The condition can use a <span class="emphasis">variable</span> instead of a fixed number, so the number of iterations can change while the program runs.
 
 ```csharp
-Random random = new Random();
+Random rnd = new Random();
 
-int amount = random.Next(0, 11);
+int amount = rnd.Next(0, 11);
 
 for (int i = 0; i < amount; i++)
 {
     Console.WriteLine(i);
 }
 
-Console.WriteLine($"Your loop just ran {amount} times");
+Console.WriteLine($"Your loop just ran {amount} of times");
 ```
 
 If <span class="codeSnip">amount</span> is 3, this produces the output:
@@ -250,8 +265,10 @@ If <span class="codeSnip">amount</span> is 3, this produces the output:
 0
 1
 2
-Your loop just ran 3 times
+Your loop just ran 3 of times
 ```
+
+Because <span class="codeSnip">Next(0, 11)</span> can return 0, the loop sometimes does not run at all, and only the final message is printed.
 
 Because <span class="codeSnip">amount</span> is declared <span class="secondEmphasis">outside</span> the loop, it can still be used after the loop ends.
 
@@ -359,13 +376,281 @@ The check comes before the <span class="codeSnip">WriteLine</span>, so it runs b
   </a>
 </div>
 
+<hr class="dividerExample" />
+
+#### Example: Why break Instead of continue
+
+<hr class="dividerExample" />
+
+<span class="codeSnip">continue</span> can skip more than one value by combining conditions with <span class="codeSnip">||</span>.
+
+```csharp
+for (int i = 0; i < 10; i++)
+{
+    if (i == 5 || i == 6)
+    {
+        continue;
+    }
+
+    Console.WriteLine(i);
+}
+```
+
+This produces the output:
+
+```shell
+0
+1
+2
+3
+4
+7
+8
+9
+```
+
+Using <span class="codeSnip">continue</span> to stop at 5 would mean listing <span class="emphasis">every</span> value from 5 to 9 in the condition, and the loop would still run all 10 iterations, skipping each one.
+
+<span class="codeSnip">break</span> does this with a single check, and it ends the loop as soon as 5 is reached, so the remaining iterations never run.
+
 <hr class="dividerSection" />
 
-## Example Program: Combat Simulator
+## Example Program: Battle Simulator
 
 <hr class="dividerSection" />
 
-(Combat Simulator challenge goes here once the screenshots are in.)
+This program asks for a player's <span class="emphasis">health</span>, how many <span class="emphasis">hits</span> they take, the <span class="emphasis">damage</span> per hit, and their <span class="emphasis">dodge chance</span>, then simulates the attacks with a for loop.
+
+<div class="centeredBullet">
+  <ul class="diamondBullets fullWidthBullet">
+    <li>If the player <span class="emphasis">dodges</span> an attack, no damage is taken.</li>
+    <li>If the player <span class="emphasis">takes damage</span>, the health left is printed.</li>
+    <li>If the player <span class="emphasis">dies</span>, the attacks stop and the user is told the player is dead.</li>
+    <li>If the player <span class="emphasis">survives</span> every attack, the user is told how much health is left.</li>
+  </ul>
+</div>
+
+<hr class="dividerSubsection1" />
+
+### Reading the Input
+
+<hr class="dividerSubsection1" />
+
+Each value is read from the console and converted to an int.
+
+```csharp
+Console.WriteLine("Enter the player's health");
+
+int health = int.Parse(Console.ReadLine());
+
+Console.WriteLine("How many hits should the player take?");
+
+int hits = int.Parse(Console.ReadLine());
+
+Console.WriteLine("How much damage per hit?");
+
+int damage = int.Parse(Console.ReadLine());
+
+Console.WriteLine("Enter the player's dodge chance");
+
+int dodge = int.Parse(Console.ReadLine());
+```
+
+<div class="xrefBox">
+  <span class="emphasis">See:</span>
+  <a href="/languages/c-family/c-sharp/basics/fundamentals/variables-and-data-types" target="_blank" rel="noopener noreferrer">
+    C# → Basics → Fundamentals → Variables and Data Types (Converting Input to Numbers)
+  </a>
+</div>
+
+<hr class="dividerSubsection1" />
+
+### The Battle Loop
+
+<hr class="dividerSubsection1" />
+
+The loop runs once for each hit, using <span class="codeSnip">hits</span> as its limit.
+
+```csharp
+Random random = new Random();
+
+for (int i = 0; i < hits; i++)
+{
+    int hitChance = random.Next(0, 100);
+
+    if (hitChance < dodge)
+    {
+        Console.WriteLine("The player dodged the attack!");
+        continue;
+    }
+
+    health -= damage;
+
+    Console.WriteLine($"The player took a hit and has {health} left");
+
+    if (health <= 0)
+    {
+        Console.WriteLine("The player is dead");
+        break;
+    }
+}
+```
+
+<div class="centeredBullet">
+  <ul class="diamondBullets fullWidthBullet">
+    <li><span class="codeSnip">random.Next(0, 100)</span> gives a <span class="emphasis">hit chance</span> from 0 to 99, a different one for every attack.</li>
+    <li>If the hit chance is lower than the dodge chance, the attack is <span class="emphasis">dodged</span>, so a dodge chance of 30 dodges about 30 out of every 100 attacks.</li>
+    <li><span class="codeSnip">continue</span> skips the rest of that iteration, so a dodged attack never reaches the damage line.</li>
+    <li><span class="codeSnip">health -= damage</span> subtracts the damage from the health.</li>
+    <li><span class="codeSnip">break</span> ends the loop as soon as health reaches 0 or less, so a dead player is not hit again.</li>
+  </ul>
+</div>
+
+<div class="xrefBox">
+  <span class="emphasis">See:</span><br />
+  <a href="/languages/c-family/c-sharp/basics/fundamentals/variables-and-data-types" target="_blank" rel="noopener noreferrer">
+    C# → Basics → Fundamentals → Variables and Data Types (Generating a Random Number)
+  </a><br />
+  <a href="/languages/c-family/c-sharp/basics/core-concepts/operators" target="_blank" rel="noopener noreferrer">
+    C# → Basics → Core Concepts → Operators (Compound Assignment Operators)
+  </a>
+</div>
+
+<hr class="dividerSubsection1" />
+
+### The Full Program
+
+<hr class="dividerSubsection1" />
+
+```csharp
+Console.WriteLine("Enter the player's health");
+
+int health = int.Parse(Console.ReadLine());
+
+Console.WriteLine("How many hits should the player take?");
+
+int hits = int.Parse(Console.ReadLine());
+
+Console.WriteLine("How much damage per hit?");
+
+int damage = int.Parse(Console.ReadLine());
+
+Console.WriteLine("Enter the player's dodge chance");
+
+int dodge = int.Parse(Console.ReadLine());
+
+Random random = new Random();
+
+for (int i = 0; i < hits; i++)
+{
+    int hitChance = random.Next(0, 100);
+
+    if (hitChance < dodge)
+    {
+        Console.WriteLine("The player dodged the attack!");
+        continue;
+    }
+
+    health -= damage;
+
+    Console.WriteLine($"The player took a hit and has {health} left");
+
+    if (health <= 0)
+    {
+        Console.WriteLine("The player is dead");
+        break;
+    }
+}
+
+if (health > 0)
+{
+    Console.WriteLine($"The player survived with {health} health");
+}
+```
+
+The final message needs its own <span class="emphasis">check</span>.
+
+<span class="codeSnip">break</span> only leaves the loop, and the code after the loop still runs, so without <span class="codeSnip">if (health &gt; 0)</span> the program would print that the player survived right after printing that the player is dead.
+
+With 100 health, 5 hits, 10 damage per hit, and a 30 dodge chance, one run prints:
+
+```shell
+Enter the player's health
+100
+How many hits should the player take?
+5
+How much damage per hit?
+10
+Enter the player's dodge chance
+30
+The player took a hit and has 90 left
+The player took a hit and has 80 left
+The player dodged the attack!
+The player took a hit and has 70 left
+The player took a hit and has 60 left
+The player survived with 60 health
+```
+
+Because the dodges are random, each run can print a different result.
+
+With 100 health, 20 hits, 50 damage per hit, and a 0 dodge chance, the player dies on the second hit:
+
+```shell
+Enter the player's health
+100
+How many hits should the player take?
+20
+How much damage per hit?
+50
+Enter the player's dodge chance
+0
+The player took a hit and has 50 left
+The player took a hit and has 0 left
+The player is dead
+```
+
+Even though 20 hits were entered, <span class="codeSnip">break</span> stops the loop after the second one.
+
+Health is allowed to go below 0, such as 60 damage against 50 health, because <span class="codeSnip">health &lt;= 0</span> still counts it as dead.
+
+<hr class="dividerExample" />
+
+#### Example: Forgetting continue
+
+<hr class="dividerExample" />
+
+Without <span class="codeSnip">continue</span>, a dodged attack prints the dodge message and then carries on to the damage line anyway.
+
+With 100 health, 5 hits, 10 damage per hit, and a 100 dodge chance, every attack is dodged, but the program still prints:
+
+```shell
+The player dodged the attack!
+The player took a hit and has 90 left
+The player dodged the attack!
+The player took a hit and has 80 left
+```
+
+The pattern continues for all 5 hits, so the player loses health on every attack they dodged.
+
+<hr class="dividerExample" />
+
+#### Example: Forgetting break
+
+<hr class="dividerExample" />
+
+Without <span class="codeSnip">break</span>, the loop keeps going after the player dies, printing the dead message on every remaining hit.
+
+With 100 health, 50 hits, 60 damage per hit, and a 0 dodge chance, the health keeps dropping long after it passes 0:
+
+```shell
+The player took a hit and has 40 left
+The player took a hit and has -20 left
+The player is dead
+The player took a hit and has -80 left
+The player is dead
+```
+
+By the end of all 50 hits, the health reaches -2900, because the attacks never stop.
 
 <hr class="dividerSection" />
 
@@ -380,6 +665,7 @@ The check comes before the <span class="codeSnip">WriteLine</span>, so it runs b
     <li>Starting the counter at <span class="emphasis">0</span> is the standard, and <span class="codeSnip">i &lt; 10</span> then runs 10 times.</li>
     <li><span class="codeSnip">i--</span> counts down, and the condition must check the lower limit.</li>
     <li><span class="codeSnip">continue</span> skips one iteration, while <span class="codeSnip">break</span> stops the loop completely.</li>
+    <li><span class="codeSnip">break</span> only leaves the loop, so any code after the loop still runs and may need its own check.</li>
   </ul>
 </div>
 
@@ -399,5 +685,10 @@ The counter, the condition, and the increase together decide how many times the 
   <div class="xrefItem">
     <a class="xrefBtn" href="/languages/c-family/c-sharp/basics/control-flow/switch-statements">← Back</a>
     <div class="xrefTitle">C# - Basics - Control Flow - Switch Statements</div>
+  </div>
+
+  <div class="xrefItem">
+    <a class="xrefBtn" href="/languages/c-family/c-sharp/advanced/linq">Next →</a>
+    <div class="xrefTitle">Section: C# - Advanced - Modern Features - LINQ</div>
   </div>
 </div>

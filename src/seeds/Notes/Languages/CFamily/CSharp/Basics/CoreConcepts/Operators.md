@@ -401,8 +401,8 @@ These operators are used most often in loops, to count up or down one step at a 
 
 <div class="xrefBox">
   <span class="emphasis">See:</span>
-  <a href="/languages/c-family/c-sharp/basics/control-flow/loops" target="_blank" rel="noopener noreferrer">
-    C# → Basics → Control Flow → Loops (Counting with a For Loop)
+  <a href="/languages/c-family/c-sharp/basics/loops/for-loops" target="_blank" rel="noopener noreferrer">
+    C# → Basics → Loops → For Loops (Counting with a For Loop)
   </a>
 </div>
 

@@ -1,4 +1,4 @@
-# Repeating Code with Loops
+# Repeating Code with For Loops
 
 <hr class="dividerSection" />
 
@@ -684,11 +684,11 @@ The counter, the condition, and the increase together decide how many times the 
 <div class="xrefNav">
   <div class="xrefItem">
     <a class="xrefBtn" href="/languages/c-family/c-sharp/basics/control-flow/switch-statements">← Back</a>
-    <div class="xrefTitle">C# - Basics - Control Flow - Switch Statements</div>
+    <div class="xrefTitle">Section: C# - Basics - Control Flow - Switch Statements</div>
   </div>
 
   <div class="xrefItem">
-    <a class="xrefBtn" href="/languages/c-family/c-sharp/advanced/linq">Next →</a>
-    <div class="xrefTitle">Section: C# - Advanced - Modern Features - LINQ</div>
+    <a class="xrefBtn" href="/languages/c-family/c-sharp/basics/loops/while-loops">Next →</a>
+    <div class="xrefTitle">C# - Basics - Loops - While Loops</div>
   </div>
 </div>

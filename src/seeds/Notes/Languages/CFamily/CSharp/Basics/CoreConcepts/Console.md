@@ -211,8 +211,8 @@ For more complex applications involving graphical interfaces or web-based commun
 
 <div class="xrefNav">
   <div class="xrefItem">
-    <a class="xrefBtn" href="/languages/c-family/c-sharp/basics/core-concepts/collections">← Back</a>
-    <div class="xrefTitle">C# - Basics - Core Concepts - Collections</div>
+    <a class="xrefBtn" href="/languages/c-family/c-sharp/basics/fundamentals/variables-and-data-types">← Back</a>
+    <div class="xrefTitle">Section: C# - Basics - Fundamentals - Variables and Data Types</div>
   </div>
 
   <div class="xrefItem">

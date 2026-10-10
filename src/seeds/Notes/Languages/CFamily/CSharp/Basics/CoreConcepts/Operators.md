@@ -2,6 +2,10 @@
 
 <hr class="dividerSection" />
 
+## Working with Operators
+
+<hr class="dividerSection" />
+
 Operators in C# are symbols or keywords that specify operations to be performed on variables and values.
 
 Understanding operators is essential for writing expressions and making decisions in your code.
@@ -373,6 +377,37 @@ number += 5;
 
 <hr class="dividerSection" />
 
+## Increment and Decrement Operators
+
+<hr class="dividerSection" />
+
+The <span class="emphasis">increment operator</span> <span class="codeSnip">++</span> increases a variable by <span class="secondEmphasis">1</span>.
+
+The <span class="emphasis">decrement operator</span> <span class="codeSnip">--</span> decreases a variable by <span class="secondEmphasis">1</span>.
+
+```csharp
+int number = 10;
+
+number--;               // number is now 9
+number = number - 1;    // number is now 8
+
+number++;               // number is now 9
+number = number + 1;    // number is now 10
+```
+
+<span class="codeSnip">number--</span> does the same thing as <span class="codeSnip">number = number - 1</span>, and <span class="codeSnip">number++</span> does the same thing as <span class="codeSnip">number = number + 1</span>.
+
+These operators are used most often in loops, to count up or down one step at a time.
+
+<div class="xrefBox">
+  <span class="emphasis">See:</span>
+  <a href="/languages/c-family/c-sharp/basics/control-flow/loops" target="_blank" rel="noopener noreferrer">
+    C# → Basics → Control Flow → Loops (Counting with a For Loop)
+  </a>
+</div>
+
+<hr class="dividerSection" />
+
 ## Ternary Operator (?:)
 
 <hr class="dividerSection" />
@@ -431,7 +466,7 @@ From simple assignment and arithmetic to comparisons and complex logical combina
   </div>
 
   <div class="xrefItem">
-    <a class="xrefBtn" href="/languages/c-family/c-sharp/basics/control-flow/conditions-and-comparisons">Next →</a>
-    <div class="xrefTitle">Section: C# - Basics - Control Flow - Conditions & Comparisons</div>
+    <a class="xrefBtn" href="/languages/c-family/c-sharp/basics/core-concepts/arrays">Next →</a>
+    <div class="xrefTitle">C# - Basics - Core Concepts - Arrays</div>
   </div>
 </div>

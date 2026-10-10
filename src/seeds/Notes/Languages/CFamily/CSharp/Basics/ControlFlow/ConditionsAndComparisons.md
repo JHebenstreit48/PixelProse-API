@@ -623,8 +623,8 @@ The next page uses these conditions to make decisions with if, else, and else if
 
 <div class="xrefNav">
   <div class="xrefItem">
-    <a class="xrefBtn" href="/languages/c-family/c-sharp/basics/core-concepts/operators">← Back</a>
-    <div class="xrefTitle">Section: C# - Basics - Core Concepts - Operators</div>
+    <a class="xrefBtn" href="/languages/c-family/c-sharp/basics/core-concepts/oop">← Back</a>
+    <div class="xrefTitle">Section: C# - Basics - Core Concepts - OOP in C#</div>
   </div>
 
   <div class="xrefItem">

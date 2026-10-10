@@ -15,6 +15,16 @@
     "category": "Languages/Java/Basics/Fundamentals"
   },
   {
+    "path": "Languages/CFamily/CPlusPlus/Basics/Fundamentals/Introduction",
+    "title": "Introduction",
+    "category": "Languages/CFamily/CPlusPlus/Basics/Fundamentals"
+  },
+  {
+    "path": "Languages/CFamily/CSharp/Advanced/ModernFeatures/LINQ",
+    "title": "LINQ",
+    "category": "Languages/CFamily/CSharp/Advanced/ModernFeatures"
+  },
+  {
     "path": "Languages/CFamily/C/Basics/Fundamentals/History",
     "title": "History",
     "category": "Languages/CFamily/C/Basics/Fundamentals"
@@ -70,36 +80,6 @@
     "category": "Languages/CFamily/CSharp/Basics/CoreConcepts"
   },
   {
-    "path": "Languages/CFamily/CSharp/Basics/Fundamentals/History",
-    "title": "History",
-    "category": "Languages/CFamily/CSharp/Basics/Fundamentals"
-  },
-  {
-    "path": "Languages/CFamily/CSharp/Basics/Fundamentals/Introduction",
-    "title": "Introduction",
-    "category": "Languages/CFamily/CSharp/Basics/Fundamentals"
-  },
-  {
-    "path": "Languages/CFamily/CSharp/Basics/Fundamentals/Syntax",
-    "title": "Syntax",
-    "category": "Languages/CFamily/CSharp/Basics/Fundamentals"
-  },
-  {
-    "path": "Languages/CFamily/CSharp/Basics/Fundamentals/VariablesAndDataTypes",
-    "title": "VariablesAndDataTypes",
-    "category": "Languages/CFamily/CSharp/Basics/Fundamentals"
-  },
-  {
-    "path": "Languages/CFamily/CPlusPlus/Basics/Fundamentals/Introduction",
-    "title": "Introduction",
-    "category": "Languages/CFamily/CPlusPlus/Basics/Fundamentals"
-  },
-  {
-    "path": "Languages/CFamily/CSharp/Advanced/ModernFeatures/LINQ",
-    "title": "LINQ",
-    "category": "Languages/CFamily/CSharp/Advanced/ModernFeatures"
-  },
-  {
     "path": "Languages/CFamily/CSharp/Basics/Loops/For",
     "title": "For",
     "category": "Languages/CFamily/CSharp/Basics/Loops"
@@ -120,24 +100,24 @@
     "category": "Languages/CFamily/CSharp/Basics/Loops"
   },
   {
-    "path": "ToolsAndTesting/Tools/VisualStudio/Advanced/DebuggingTools/BreakpointsAndStepDebugging",
-    "title": "BreakpointsAndStepDebugging",
-    "category": "ToolsAndTesting/Tools/VisualStudio/Advanced/DebuggingTools"
+    "path": "Languages/CFamily/CSharp/Basics/Fundamentals/History",
+    "title": "History",
+    "category": "Languages/CFamily/CSharp/Basics/Fundamentals"
   },
   {
-    "path": "ToolsAndTesting/Tools/VisualStudio/Advanced/DebuggingTools/WatchAndAutoWindows",
-    "title": "WatchAndAutoWindows",
-    "category": "ToolsAndTesting/Tools/VisualStudio/Advanced/DebuggingTools"
+    "path": "Languages/CFamily/CSharp/Basics/Fundamentals/Introduction",
+    "title": "Introduction",
+    "category": "Languages/CFamily/CSharp/Basics/Fundamentals"
   },
   {
-    "path": "ToolsAndTesting/Tools/VisualStudio/Advanced/WorkflowAndShortcuts/CommentingShortcuts",
-    "title": "CommentingShortcuts",
-    "category": "ToolsAndTesting/Tools/VisualStudio/Advanced/WorkflowAndShortcuts"
+    "path": "Languages/CFamily/CSharp/Basics/Fundamentals/Syntax",
+    "title": "Syntax",
+    "category": "Languages/CFamily/CSharp/Basics/Fundamentals"
   },
   {
-    "path": "ToolsAndTesting/Tools/VisualStudio/Advanced/WorkflowAndShortcuts/StartupProjectsAndSolutions",
-    "title": "StartupProjectsAndSolutions",
-    "category": "ToolsAndTesting/Tools/VisualStudio/Advanced/WorkflowAndShortcuts"
+    "path": "Languages/CFamily/CSharp/Basics/Fundamentals/VariablesAndDataTypes",
+    "title": "VariablesAndDataTypes",
+    "category": "Languages/CFamily/CSharp/Basics/Fundamentals"
   },
   {
     "path": "ToolsAndTesting/Tools/VisualStudio/Basics/EditorFeatures/ErrorListAndIndicators",
@@ -158,5 +138,25 @@
     "path": "ToolsAndTesting/Tools/VisualStudio/Basics/Fundamentals/SolutionExplorer",
     "title": "SolutionExplorer",
     "category": "ToolsAndTesting/Tools/VisualStudio/Basics/Fundamentals"
+  },
+  {
+    "path": "ToolsAndTesting/Tools/VisualStudio/Advanced/DebuggingTools/BreakpointsAndStepDebugging",
+    "title": "BreakpointsAndStepDebugging",
+    "category": "ToolsAndTesting/Tools/VisualStudio/Advanced/DebuggingTools"
+  },
+  {
+    "path": "ToolsAndTesting/Tools/VisualStudio/Advanced/DebuggingTools/WatchAndAutoWindows",
+    "title": "WatchAndAutoWindows",
+    "category": "ToolsAndTesting/Tools/VisualStudio/Advanced/DebuggingTools"
+  },
+  {
+    "path": "ToolsAndTesting/Tools/VisualStudio/Advanced/WorkflowAndShortcuts/CommentingShortcuts",
+    "title": "CommentingShortcuts",
+    "category": "ToolsAndTesting/Tools/VisualStudio/Advanced/WorkflowAndShortcuts"
+  },
+  {
+    "path": "ToolsAndTesting/Tools/VisualStudio/Advanced/WorkflowAndShortcuts/StartupProjectsAndSolutions",
+    "title": "StartupProjectsAndSolutions",
+    "category": "ToolsAndTesting/Tools/VisualStudio/Advanced/WorkflowAndShortcuts"
   }
 ]

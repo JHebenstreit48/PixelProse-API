@@ -265,12 +265,12 @@ Choosing the right type of collection depends on the specific requirements of yo
 
 <div class="xrefNav">
   <div class="xrefItem">
-    <a class="xrefBtn" href="/languages/c-family/c-sharp/basics/core-concepts/oop">← Back</a>
-    <div class="xrefTitle">C# - Basics - Core Concepts - OOP in C#</div>
+    <a class="xrefBtn" href="/languages/c-family/c-sharp/basics/core-concepts/arrays">← Back</a>
+    <div class="xrefTitle">C# - Basics - Core Concepts - Arrays</div>
   </div>
 
   <div class="xrefItem">
-    <a class="xrefBtn" href="/languages/c-family/c-sharp/basics/core-concepts/console">Next →</a>
-    <div class="xrefTitle">C# - Basics - Core Concepts - Console</div>
+    <a class="xrefBtn" href="/languages/c-family/c-sharp/basics/core-concepts/oop">Next →</a>
+    <div class="xrefTitle">C# - Basics - Core Concepts - OOP in C#</div>
   </div>
 </div>

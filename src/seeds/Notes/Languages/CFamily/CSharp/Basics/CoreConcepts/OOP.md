@@ -132,12 +132,12 @@ Mastering OOP principles in C# is essential for building scalable and robust sof
 
 <div class="xrefNav">
   <div class="xrefItem">
-    <a class="xrefBtn" href="/languages/c-family/c-sharp/basics/fundamentals/variables-and-data-types">← Back</a>
-    <div class="xrefTitle">Section: C# - Basics - Fundamentals - Variables & Data Types</div>
+    <a class="xrefBtn" href="/languages/c-family/c-sharp/basics/core-concepts/collections">← Back</a>
+    <div class="xrefTitle">C# - Basics - Core Concepts - Collections</div>
   </div>
 
   <div class="xrefItem">
-    <a class="xrefBtn" href="/languages/c-family/c-sharp/basics/core-concepts/collections">Next →</a>
-    <div class="xrefTitle">C# - Basics - Core Concepts - Collections</div>
+    <a class="xrefBtn" href="/languages/c-family/c-sharp/basics/control-flow/conditions-and-comparisons">Next →</a>
+    <div class="xrefTitle">Section: C# - Basics - Control Flow - Conditions & Comparisons</div>
   </div>
 </div>

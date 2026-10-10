@@ -883,7 +883,7 @@ Concatenation can be simpler for a small number of values, while composite forma
   </div>
 
   <div class="xrefItem">
-    <a class="xrefBtn" href="/languages/c-family/c-sharp/basics/core-concepts/oop">Next →</a>
-    <div class="xrefTitle">Section: C# - Basics - Core Concepts - OOP in C#</div>
+    <a class="xrefBtn" href="/languages/c-family/c-sharp/basics/core-concepts/console">Next →</a>
+    <div class="xrefTitle">Section: C# - Basics - Core Concepts - Console</div>
   </div>
 </div>

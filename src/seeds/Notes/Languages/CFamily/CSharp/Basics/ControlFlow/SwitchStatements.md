@@ -545,7 +545,7 @@ It works alongside if statements, with each suited to a different kind of decisi
   </div>
 
   <div class="xrefItem">
-    <a class="xrefBtn" href="/languages/c-family/c-sharp/basics/control-flow/loops">Next →</a>
-    <div class="xrefTitle">C# - Basics - Control Flow - Loops</div>
+    <a class="xrefBtn" href="/languages/c-family/c-sharp/basics/loops/for-loops">Next →</a>
+    <div class="xrefTitle">Section: C# - Basics - Loops - For Loops</div>
   </div>
 </div>
